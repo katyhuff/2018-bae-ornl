@@ -15,3 +15,9 @@ This folder contains all documentation, papers in progress, and presentations.
 
 ### Cyclus-pres
 A Cyclus introduction presentation
+
+### Meeting-log
+Compilation of meeting logs including topics discuessed.
+
+### Research-journal
+Ipynb of research progress and results
