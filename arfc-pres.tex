@@ -26,6 +26,7 @@
 
 %\usepackage{bbding}
 \usepackage{amsfonts}
+\usepackage{lipsum}
 \usepackage{adjustbox}
 \usepackage{fancyvrb}
 \usepackage{amsmath}
@@ -54,6 +55,14 @@
     }{}
 \makeatother
 
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
@@ -104,12 +113,6 @@
 \end{withoutheadline}
 
 %%--------------------------------%%
-\AtBeginSection[]{
-\begin{frame}
-  \frametitle{Outline}
-  \tableofcontents[currentsection]
-\end{frame}
-}
 
 \section{Before We Start}
 \input{background}
@@ -121,17 +124,8 @@
 \section{Output and Examples}
 \input{out}
 
-%%--------------------------------%%
-%%--------------------------------%%
-\begin{frame}[allowframebreaks]
-  \frametitle{References}
-  \bibliographystyle{abbrv}
-  {\footnotesize \bibliography{bibliography} }
-\end{frame}
-
-%%--------------------------------%%
-
-
+\section{Conclusion}
+\input{conclusion}
 \end{document}
 
 
