@@ -13,5 +13,11 @@ Date: 05/25/2018 -
 ## Docs
 This folder contains all documentation, papers in progress, and presentations.
 
-### Cyclus-pres
+### Cyclus-pres (tex)
 A Cyclus introduction presentation
+
+### Meeting-log (md)
+Compilation of meeting log
+
+### Research Journal (md)
+Compilation of research journal
