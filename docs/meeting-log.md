@@ -1,5 +1,28 @@
 # Meeting Log
 
+
+## 05/25/2018
+First day of work.
+
+Will get:
+1. Transmutation database
+    * transition scenario recipes are different than static fuel cycle (e.g. More breeding ratio)
+2. Off-site extension (Aug 13 - 26)
+
+Do:
+1. Upload Josh's transition recipes to Gitlab
+ORION - Create Gitlab (ORNL) repo for ORION (input +  postprocessing python scripts)
+2. Report study (static and transition) in Cyclus (recipe, deployment scheme given)
+3. Cycamore::Reactor startup recipe
+    * by changing `<change_recipe>` in reactor
+    * chaning source code
+
+Misc:
+1. under cross section -> recipegeneration -> textfile
+    * one for every cycle
+2. Tableau
+3. For ORION, recipes are mass fraction and negative
+
 ## 05/21/2018
 Initial meeting.
 Discussed:
