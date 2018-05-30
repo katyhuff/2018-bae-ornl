@@ -1,5 +1,39 @@
 # Meeting Log
 
+## 05/30/2018
+Andrew Worall, Josh Peterson
+
+1. Benchmark paper should be conference paper and technical note
+    * networking / getting the name out there
+2. Cyclus' challenge
+    * as a user, there's too many options
+    * hard to use without GUI
+3. Help ORNL learn more about Cyclus and broaden lab perspective
+    * Real-life simulation
+    * Goal is to inform policy decision
+    * Applying real-world scenarios:
+        * slowly increasing reprocessing facility throughput
+4. Initial FR load with LEU:
+    * LWR reprocessing (aqueous) is only during transition
+    * aqueous reprocessing can be avoided with LEU fuel startup
+5. Compiling UNF Standards
+    * sensitivity study:
+        * what difference does it make to use UNF-STANDARDS vs just one recipe for all fuel?
+
+6. Couple transmutation data with ORION / Cyclus
+7. Divide US into region -> what do people need?
+    * Sunny Kim (PNNL) @ Univ Maryland
+        * energy and climate model person
+        * GCAM / MARKAL
+        * Regional US model -> why didn't nuclear grow in certain regions?
+8. Transitioning into MIXED fleet
+    * How do advanced reactors feed each other? (SYNERGY!!)
+9. ORSAGE(?) - GIS database for ORNL
+    * big-brother-like system that has extremely fine data on U.S. geography and popualation
+    * EAGLE-I
+    * metrics like how many people do not have electricity
+    * Do people move towards or away from nuclear power?
+
 
 ## 05/25/2018
 First day of work.
