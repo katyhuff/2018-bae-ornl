@@ -64,20 +64,38 @@ lwr4 = reactor('lwr4', {'U235': 0.3, 'Pu239': 0.4, 'Pu241': 0.3}, 99, 18, 33, 1,
 
 reactor_list = np.array([lwr1, lwr2, lwr3, lwr4])
 
-def pu_inv(reactor_list):
+def unf_inv(reactor_list):
     unf_inv = np.zeros(timestep)
     for reactor in reactor_list:
         for indx, fuel_discharge in enumerate(reactor.fuel_out_list):
-            unf_inv[indx] += fuel_discharge
+            discharge_time = reactor.fuel_time_list[indx]
+            unf_inv[discharge_time-1] += fuel_discharge
+    return unf_inv
 
+def pu_inv(reactor_list):
     pu_inv = np.zeros(timestep)
     for reactor in reactor_list:
         # find pu content of reactor discharge comp
         pu_content = sum([value for key, value in reactor.output_comp.items() if 'Pu' in key])
         for indx, fuel_discharge in enumerate(reactor.fuel_out_list):
             discharge_time = reactor.fuel_time_list[indx]
-            print(discharge_time)
             pu_inv[discharge_time-1] += fuel_discharge * pu_content
 
     return pu_inv
 
+def fuel_demand(reactor_list):
+    fuel_demand = np.zeros(timestep)
+    for reactor in reactor_list:
+        for indx, fuel_request in enumerate(reactor.fuel_in_list):
+            print(fuel_request)
+            request_time = reactor.fuel_time_list[indx]
+            print(request_time)
+            fuel_demand[request_time-1] += fuel_request
+    return fuel_demand
+0
+print(lwr1.fuel_time_list)
+print(lwr1.fuel_in_list)
+print(lwr1.fuel_out_list)
+print(unf_inv(reactor_list))
+print(pu_inv(reactor_list))
+print(fuel_demand(reactor_list))
