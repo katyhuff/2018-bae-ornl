@@ -1,4 +1,21 @@
 
+## 06/01/2018
+1. EG23 with ORION / Cyclus
+    * EG23 FR depletion -> BR is less than one.
+2. Cyclus transition scenario finding deployment scheme script finished
+    * in scripts folder (`reactor_transition.py`)
+3. udb dat file to sqlite file script written
+    * also in scripts folder (`udb_to_sqlite.py`)
+
+
+## 06/01/2018
+1. Transmutation database (SQL) to Cyclus and Orion recipe files. Done
+    * ORION does not import files, one copy-pastes to the GUI
+    * Some isotopes are not in ORION (ones with extremely short half-lives)
+        * Issues created in Gitlab (https://code.ornl.gov/nuclear_fuel_cycle/transmutation_database/issues/1)
+    * Modules and tests are in Gitlab as well.
+
+
 
 ## 05/30/2018
 
