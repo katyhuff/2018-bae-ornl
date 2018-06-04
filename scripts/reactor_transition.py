@@ -32,6 +32,7 @@ class institution:
         # actually do the things to get deployment timeseries
         self.meet_init_power()
         while self.time < timestep:
+            self.build_lacking()
             print('Time: %i' %self.time)
             print('Power Demand:' + str(self.power_timeseries[self.time]))
             print('Reactors Deployed: ' + str(len(self.reactor_list)))
@@ -44,7 +45,7 @@ class institution:
             ### RECORDING
             self.deployed_lwrs[self.time] = sum([1 for reactor in self.reactor_list if not reactor.fr])
             self.deployed_frs[self.time] = sum([1 for reactor in self.reactor_list if reactor.fr])
-            self.build_lacking()
+            
             self.decom()
             self.time += 1
 
@@ -140,23 +141,68 @@ class institution:
         clone.deploy_time = deploy_time
         return clone
 
-    def plot_power_cap(self):
+    def plot_power_cap(self, filename):
         timeseries = np.arange(self.timestep)
         plt.plot(timeseries, self.deployed_lwrs * self.lwr.power_cap, label='LWR')
         plt.plot(timeseries, self.deployed_frs * self.fr.power_cap, label='FR')
+        plt.plot(timeseries, self.deployed_lwrs * self.lwr.power_cap + self.deployed_frs * self.fr.power_cap, label='TOTAL')
         plt.plot(timeseries, self.power_timeseries, label='POWER TIMESERIES')
         plt.grid()
         plt.legend()
-        plt.show()
+        plt.savefig(filename, format='png')
+        plt.close()
 
-    def plot_deployment(self):
+    def plot_deployment(self, filename):
         timeseries = np.arange(self.timestep)
         plt.plot(timeseries, self.lwr_deployment, label='LWR')
         plt.plot(timeseries, self.fr_deployment, label='FR')
         plt.grid()
         plt.legend()
-        plt.show()
+        plt.savefig(filename, format='png')
+        plt.close()
 
+    def output_deployment_scheme(self, filename):
+        # Deployinst Chunks
+        file = open(filename, 'w')
+        file.write(self.write_deployinst_block(False))
+        file.write(self.write_deployinst_block(True))
+
+
+    def write_deployinst_block(self, fr):
+        if fr:
+            reactor = 'fr'
+            deployment = [val for val in self.fr_deployment if val != 0]
+            lifetime = self.fr.lifetime
+        else:
+            reactor = 'lwr'
+            deployment = [val for val in self.lwr_deployment if val != 0]
+            lifetime = self.lwr.lifetime
+
+        block = '<institution><name>%s_inst</name><config><DeployInst>\n' %reactor
+
+        block += ('\t<prototypes>\n')
+        for i in range(len(deployment)):
+            block += '\t\t<val>%s</val>\n' %reactor
+        block += '\t</prototypes>\n'
+ 
+        block += '\t<build_times>\n'
+        for indx, val in enumerate(deployment):
+            block += '\t\t<val>%i</val>\n' %indx
+        block += '\t</build_times>\n'
+
+        block += '\t<n_build>\n'
+        for indx, val in enumerate(deployment):
+            block += '\t\t<val>%i</val>\n' %val
+        block += '\t</n_build>\n'
+
+        block += '\t<lifetimes>\n'
+        for i in range(len(deployment)):
+            block += '\t\t<val>%i</val>\n' %lifetime
+        block += '\t</n_build>\n'
+
+        block += '</DeployInst></config></institution>\n\n'
+
+        return block
 
 
 lwr = reactor('lwr1', False, 1000, {'U235': 0.05, 'U238': 0.95}, {'U235': 0.99, 'Pu239': 0.01},
@@ -165,8 +211,8 @@ fr = reactor('sfr1', True, 600, {'U238': 0.9, 'Pu239': 0.1}, {'U238': 0.85, 'Pu2
              60, 2, 15, 1, 10)
 
 z = institution(100, '10000 + (300 * t)', lwr, fr, trans_start=50)
-z.plot_power_cap()
-plt.close()
-z.plot_deployment()
+z.plot_power_cap('power_cap.png')
 
+z.plot_deployment('deployment.png')
 
+z.output_deployment_scheme('dep.txt')
