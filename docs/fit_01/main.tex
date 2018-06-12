@@ -26,7 +26,7 @@
 
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
-    
+
 \makeglossaries
 
 %%%%%%%%%%%%%%actual words%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
@@ -151,9 +151,27 @@ and the blanket cross section (higher Pu+Am).
 
 \FloatBarrier
 
-\section{Discussion}
-We tested the ORION capability to perform depletion calculations
-using cross sections and user-defined power density
+\section{Conclusion}
+In-code fuel fabrication and depletion calculation capabilities are crucial
+to modeling advanced fuel cycles.
+Changes in the input stream can occur by multi-stage reprocessing or
+technologies like on-line reprocessing \glspl{MSR}. Using a fixed fraction method
+for fuel fabrication and a recipe for depletion may work for once-through cycles,
+but can introduce large errors in advanced fuel cycles with continuous reprocessing.
+
+We tested ORION's capability to perform depletion calculations
+using cross sections and a user-defined power density. We showed that
+the change in plutonium stream quality does affect the output depletion
+from the reactor. However, the fuel loading model function in ORION is not tested
+and is future work. Also, the \gls{SFR} discharge composition cannot be
+compared directly, since the test \gls{SFR} uses a lumped-model \gls{SFR},
+whereas the cross sections used for ORION separates the driver and the blanket fuel.
+
+Better comparison could have been done if the analysts for different fuel cycle
+codes used the same set of cross section data. However, it should be noted that
+different codes use varying algorithms to perform fuel fabrication and depletion
+calculations.
+
 
 \bibliographystyle{abbrv}
 \bibliography{bib}
