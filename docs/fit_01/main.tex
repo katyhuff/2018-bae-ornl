@@ -1,9 +1,10 @@
-\documentclass{report}
+\documentclass{article}
 
 
 %%%% packages and definitions (optional)
 \usepackage{graphicx} % allows inclusion of graphics
 \usepackage{graphics}
+\usepackage{placeins}
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
 
@@ -19,13 +20,6 @@
 \title{Functionality Isolation Test 01 - Mixed Fuel Fabrication and Depletion Changes with
         Changes in Plutonium Stream Quality}
 \author{Jin Whan Bae, Eva Davidson, Andrew Worall}
-
-\institute{\underline{}
-Oak Ridge National Laboratory
-\and
-Oak Ridge, TN
-}
-\email{baej@ornl.gov}
 
 
 %%%% Acronym support
@@ -89,9 +83,9 @@ reactor and out of the reactor.
 For this test, we used a previously-generated cross section library.
 \gls{ORNL} has collaborated with \gls{NNL} to produce burnup-dependent cross section libraries specific to the fuel
 cycles being evaluated in the FCO campaign \cite{wigeland_nuclear_2014}. The libraries are generated with the
-SCALE suite of codes \cite{scale}. The cross section for \gls{PWR} \gls{MOX} model was generated from modeling
+SCALE suite of codes \cite{noauthor_scale_nodate}. The cross section for \gls{PWR} \gls{MOX} model was generated from modeling
 a Westinghouse 17 by 17 LOPAR fuel assembly in TRITON for 27 burnup steps and the cross section for the \gls{SFR}
-model was generated from COUPLE using a steady-state flux spectrum from $MC^2-3 / REBUS-3$ \cite{lee_mc2-3_2013}.
+model was generated from COUPLE using a steady-state flux spectrum from $MC^2-3 / REBUS-3$ \cite{lee_mc2-3:_2013}.
 More details on cross section generation can be found in Peterson et al \cite{peterson_generating_2016}.
 
 
@@ -105,7 +99,7 @@ results from other codes. The main differences rises from the following two fact
     \item `Lumping together' of driver and blanket region
 \end{enumerate}
 
-\section{\gls{MOX} \gls{LWR}}
+\subsection{\gls{MOX} \gls{LWR}}
 Four qualities of \gls{MA} streams (ref, source one, two, three) are mixed with 
 \gls{DU} (0.238\% $^{235}U$) in a fixed ratio (7\% \gls{MA}) and depleted in the thermal reactor
 using the MPR mode in ORION. The charge and discharge fuel compositions are listed in
@@ -114,7 +108,6 @@ tables \ref{fig:lwr_charge} and \ref{fig:lwr_discharge}, respectively.
 \begin{table}[h]
     \centering
     \input{mox_lwr_charge}
-    \end{tabular}
     \caption{Charge fuel composition for \gls{MOX} \gls{LWR}}
     \label{fig:lwr_charge}
 \end{table}
@@ -126,39 +119,44 @@ tables \ref{fig:lwr_charge} and \ref{fig:lwr_discharge}, respectively.
     \label{fig:lwr_discharge}
 \end{table}
 
+\FloatBarrier
 
-\section{\gls{SFR}}
+\subsection{\gls{SFR}}
 Four qualities of \gls{SFR} streams (ref, source one, two, three) are mixed with
 \gls{DU} (0.238\% $^{235}U$) in a fixed ratio (15.97\% \gls{MA}) and depleted in the 
 fast reactor using the MPR mode in ORION. The charge and discharge fuel compositions are 
-listed in tables \ref{fig:sfr_charge} and \ref{fig_sfr_discharge}, respectively.
+listed in tables \ref{fig:sfr_charge} and \ref{fig:sfr_discharge}, respectively.
 
 Note that for the discharge compositions both the compositions depleted with driver
 cross sections and blanket cross sections are listed. This is because two separate
 cross section data are acquired for ORION, but the \gls{SFR} specification in the
 FIT groups the driver and blanket into one core. Given that difference, the depleted
 composition should fall in between the depleted composition using the driver cross section (lower Pu+Am),
-and the balnket cross section (higher Pu+Am).
+and the blanket cross section (higher Pu+Am).
 
-\begin{table}][h]
+\begin{table}[h]
     \centering
     \input{sfr_charge}
-    \end{tabular}
     \caption{Charge fuel composition for \gls{SFR}}
     \label{fig:sfr_charge}
 \end{table}
 
-\begin{table}][h]
+\begin{table}[h]
     \centering
-    \input{sfr_discharge}
-    \end{tabular}
+    \resizebox{\textwidth}{!}{
+    \input{sfr_discharge}}
     \caption{Discharge fuel composition for \gls{SFR}}
     \label{fig:sfr_discharge}
 \end{table}
 
+\FloatBarrier
+
+\section{Discussion}
+We tested the ORION capability to perform depletion calculations
+using cross sections and user-defined power density
 
 \bibliographystyle{abbrv}
-\bibliography{bibliography}
+\bibliography{bib}
 
 
 \end{document}
