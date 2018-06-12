@@ -47,7 +47,7 @@ the absorption and fission cross section($\sigma_a \sigma_f$) and the average nu
 from the cross section data to calculate the equivalent fissile coefficient.
 
 This functionality is considered by the analysts as incomplete and was not utilized in this test. Thus, all the results
-generated in ORION for this test are using fixed fraction fuel fabriaction.
+generated in ORION for this test are using fixed fraction fuel fabrication.
 
 \subsection{ORION Depletion Calculations}
 ORION in-reactor depletion calculations are performed with either cross sections or recipes.
@@ -56,8 +56,8 @@ cross section libraries for ORION. The cross sections can be generated using lat
 ECCO-ERANOS, FISPEN or SCALE. Stand-alone utility codes called SCORI and FISORI were developed and used to reformat
 the one-group cross sections from SCALE into an ORION burnup-dependent cross section library format, hence loosely
 coupling SCALE to ORION. These libraries are used in an ORION calculation using the MEEMS Pseudo Reactor (MPR) mode.
-The MPR mode depletes the fuel by calculating the flux at a user-defined power density using quadratic interpolation
-, then solving the batesman equation using the cross sections from the library. 
+The MPR mode depletes the fuel by calculating the flux at a user-defined power density using quadratic interpolation,
+ then solving the Bateman equation using the cross sections from the library. 
 
 In addition to generating cross sections, lattice physics codes can also be used to generate recipes, which are
 tabulated isotopic fractions for a given fuel irradiation, used as transfer coefficients in ORION for each 
@@ -83,16 +83,16 @@ reactor and out of the reactor.
 For this test, we used a previously-generated cross section library.
 \gls{ORNL} has collaborated with \gls{NNL} to produce burnup-dependent cross section libraries specific to the fuel
 cycles being evaluated in the FCO campaign \cite{wigeland_nuclear_2014}. The libraries are generated with the
-SCALE suite of codes \cite{noauthor_scale_nodate}. The cross section for \gls{PWR} \gls{MOX} model was generated from modeling
+SCALE suite of codes \cite{noauthor_scale_nodate}. The cross section for the \gls{PWR} \gls{MOX} model was generated from modeling
 a Westinghouse 17 by 17 LOPAR fuel assembly in TRITON for 27 burnup steps and the cross section for the \gls{SFR}
 model was generated from COUPLE using a steady-state flux spectrum from $MC^2-3 / REBUS-3$ \cite{lee_mc2-3:_2013}.
 More details on cross section generation can be found in Peterson et al \cite{peterson_generating_2016}.
 
 
 \section{Results}
-The results of the \gls{FIT} is reproduced below. Note that all the results are for the fixed fraction
+The results of the \gls{FIT} are reproduced below. Note that all the results are for the fixed fraction
 fuel fabrication because the \gls{FLM} for ORION is incomplete. The depletion calculations are similar to the
-results from other codes. The main differences rises from the following two factors:
+results from other codes. The main differences rise from the following two factors:
 
 \begin{enumerate}
     \item Cross section generation
@@ -167,7 +167,7 @@ and is future work. Also, the \gls{SFR} discharge composition cannot be
 compared directly, since the test \gls{SFR} uses a lumped-model \gls{SFR},
 whereas the cross sections used for ORION separates the driver and the blanket fuel.
 
-Better comparison could have been done if the analysts for different fuel cycle
+A better comparison could have been done if the analysts for different fuel cycle
 codes used the same set of cross section data. However, it should be noted that
 different codes use varying algorithms to perform fuel fabrication and depletion
 calculations.
