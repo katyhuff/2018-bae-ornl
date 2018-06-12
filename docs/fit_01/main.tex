@@ -43,10 +43,10 @@ and models decay and in-reactor irradiation of fuel.
 
 \subsection{ORION Fuel Loading Model}
 The \gls{FLM} for ORION uses \glspl{EFMC} to calculate how much of the fissile stream is needed. ORION reads
-the absorption and fission cross section($\sigma_a \sigma_f$) and the average number of neutrons produced per fission ($\nu$)
+the absorption and fission cross section($\sigma_a, \sigma_f$) and the average number of neutrons produced per fission ($\nu$)
 from the cross section data to calculate the equivalent fissile coefficient.
 
-This functionality is considered by the analysts as incomplete and was not utilized in this test. Thus, all the results
+This functionality is considered by the analysts as incomplete and is not utilized in this test. Thus, all the results
 generated in ORION for this test are using fixed fraction fuel fabrication.
 
 \subsection{ORION Depletion Calculations}
@@ -55,9 +55,19 @@ Prior to an ORION analysis, detailed lattice physics calculations are completed 
 cross section libraries for ORION. The cross sections can be generated using lattice physics models set up in CASMO,
 ECCO-ERANOS, FISPEN or SCALE. Stand-alone utility codes called SCORI and FISORI were developed and used to reformat
 the one-group cross sections from SCALE into an ORION burnup-dependent cross section library format, hence loosely
-coupling SCALE to ORION. These libraries are used in an ORION calculation using the MEEMS Pseudo Reactor (MPR) mode.
+coupling SCALE to ORION (shown in figure \ref{fig:sch}). These libraries are used in an ORION calculation using the MEEMS Pseudo Reactor (MPR) mode.
 The MPR mode depletes the fuel by calculating the flux at a user-defined power density using quadratic interpolation,
  then solving the Bateman equation using the cross sections from the library. 
+
+ \begin{figure}[htbp!]
+    \begin{center}
+    \resizebox{0.7\textwidth}{!}{
+        \includegraphics[scale=1.0]{./schematic.png}
+        }
+    \end{center}
+    \caption{Schematic of link between SCALE and ORION}
+    \label{fig:sch}
+\end{figure}
 
 In addition to generating cross sections, lattice physics codes can also be used to generate recipes, which are
 tabulated isotopic fractions for a given fuel irradiation, used as transfer coefficients in ORION for each 
@@ -66,21 +76,21 @@ reactor and fuel type used.
 \section{Method}
 
 A simple fuel cycle is created (shown in figure \ref{fig:flow}) where an \gls{MA} stream
-( plutonium and americium with predefined isotopic composition) is mixed with a \gls{DU} (0.238\% $^{235}U$)
-stream to create fuel for a single reactor. The fuel is then irradiated, using the MPR mode, to a predefined (41.09 MWd/kgiHM for \gls{MOX} \gls{LWR}
-and 100 MWd/kgiHM for \gls{SFR}) burnup and then sent to the buffer. We report the fuel composition going into the
+(plutonium and americium with predefined isotopic composition) is mixed with a \gls{DU} (0.238\% $^{235}U$)
+stream to create fuel for a single reactor. The fuel is then irradiated, using the MPR mode, to a predefined burnup (41.09 MWd/kgiHM for \gls{MOX} \gls{LWR}
+and 100 MWd/kgiHM for \gls{SFR}) and then sent to the buffer. We report the fuel composition going into the
 reactor and out of the reactor.
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=1.0]{./flow.jpg}
+        \includegraphics[scale=0.5]{./flow.jpg}
     \end{center}
     \caption{Material flow used for plutonium quality analysis.}
     \label{fig:flow}
 \end{figure}
 
 \subsection{Cross Section Generation}
-For this test, we used a previously-generated cross section library.
+For this test, we used a previously-generated cross section library as an input.
 \gls{ORNL} has collaborated with \gls{NNL} to produce burnup-dependent cross section libraries specific to the fuel
 cycles being evaluated in the FCO campaign \cite{wigeland_nuclear_2014}. The libraries are generated with the
 SCALE suite of codes \cite{noauthor_scale_nodate}. The cross section for the \gls{PWR} \gls{MOX} model was generated from modeling
@@ -130,7 +140,7 @@ listed in tables \ref{fig:sfr_charge} and \ref{fig:sfr_discharge}, respectively.
 Note that for the discharge compositions both the compositions depleted with driver
 cross sections and blanket cross sections are listed. This is because two separate
 cross section data are acquired for ORION, but the \gls{SFR} specification in the
-FIT groups the driver and blanket into one core. Given that difference, the depleted
+FIT lumps the driver and blanket into one core. Given that difference, the depleted
 composition should fall in between the depleted composition using the driver cross section (lower Pu+Am),
 and the blanket cross section (higher Pu+Am).
 
@@ -155,8 +165,8 @@ and the blanket cross section (higher Pu+Am).
 In-code fuel fabrication and depletion calculation capabilities are crucial
 to modeling advanced fuel cycles.
 Changes in the input stream can occur by multi-stage reprocessing or
-technologies like on-line reprocessing \glspl{MSR}. Using a fixed fraction method
-for fuel fabrication and a recipe for depletion may work for once-through cycles,
+technologies like on-line-reprocessing \glspl{MSR}. Using a fixed fraction method
+for fuel fabrication and a recipe for depletion may work for a once-through cycle,
 but can introduce large errors in advanced fuel cycles with continuous reprocessing.
 
 We tested ORION's capability to perform depletion calculations
@@ -173,7 +183,7 @@ different codes use varying algorithms to perform fuel fabrication and depletion
 calculations.
 
 
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
 \bibliography{bib}
 
 
