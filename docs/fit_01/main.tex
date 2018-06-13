@@ -8,7 +8,11 @@
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
 
-
+\usepackage{xcolor, colortbl}
+\definecolor{Lightred}{rgb}{1.92,0.81,0.82}
+\newcolumntype{a}{>{\columncolor{Lightred}}c}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\newcolumntype{q}{>{\columncolor{LightCyan}}c}
 
 \newcommand{\SN}{S$_N$}
 \renewcommand{\vec}[1]{\bm{#1}} %vector is bold italic
@@ -117,15 +121,19 @@ tables \ref{fig:lwr_charge} and \ref{fig:lwr_discharge}, respectively.
 
 \begin{table}[h]
     \centering
-    \input{mox_lwr_charge}
-    \caption{Charge fuel composition for \gls{MOX} \gls{LWR}}
+    \resizebox{\textwidth}{!}{
+    \input{mox_lwr_charge}}
+    \caption{Charge fuel composition for \gls{MOX} \gls{LWR} with percent differences from
+             Cyclus results}
     \label{fig:lwr_charge}
 \end{table}
 
 \begin{table}[h]
     \centering
-    \input{mox_lwr_discharge}
-    \caption{Discharge fuel composition for \gls{MOX} \gls{LWR}}
+    \resizebox{\textwidth}{!}{
+    \input{mox_lwr_discharge}}
+    \caption{Discharge fuel composition for \gls{MOX} \gls{LWR} with percent differences from
+             Cyclus results}
     \label{fig:lwr_discharge}
 \end{table}
 
@@ -142,20 +150,34 @@ cross sections and blanket cross sections are listed. This is because two separa
 cross section data are acquired for ORION, but the \gls{SFR} specification in the
 FIT lumps the driver and blanket into one core. Given that difference, the depleted
 composition should fall in between the depleted composition using the driver cross section (lower Pu+Am),
-and the blanket cross section (higher Pu+Am).
+and the blanket cross section (higher Pu+Am). To prove this, we multiplied the
+obtained compositions by the mass fraction in the \gls{SFR} core. We assumed that
+the driver fuel takes up 56.5\%, by referencing the \gls{PRISM} design \cite{triplett_prism:_2012}.
 
 \begin{table}[h]
     \centering
-    \input{sfr_charge}
-    \caption{Charge fuel composition for \gls{SFR}}
+    \resizebox{\textwidth}{!}{
+    \input{sfr_charge}}
+    \caption{Charge fuel composition for \gls{SFR} with percent differences from
+             Cyclus results}
     \label{fig:sfr_charge}
+\end{table}
+
+
+\begin{table}[h]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \input{sfr_discharge_only}}
+    \caption{Discharge fuel composition for \gls{SFR} using blanket and driver cross sections.}
+    \label{fig:sfr_charge_only}
 \end{table}
 
 \begin{table}[h]
     \centering
     \resizebox{\textwidth}{!}{
     \input{sfr_discharge}}
-    \caption{Discharge fuel composition for \gls{SFR}}
+    \caption{Discharge fuel composition for \gls{SFR} with percent differences from
+             Cyclus results}
     \label{fig:sfr_discharge}
 \end{table}
 
