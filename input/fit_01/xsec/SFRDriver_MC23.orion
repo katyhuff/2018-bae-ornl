@@ -1,0 +1,894 @@
+BurnupSteps     1
+      0.0000
+NNuclides    267
+CrossSections
+MaxReactions    2
+   41  110240  NA24       NumberReactions    0 NumberParents   1
+        2308      110230
+  181  240510  CR51       NumberReactions    0 NumberParents   1
+        2341      240500
+  182  240550  CR55       NumberReactions    0 NumberParents   1
+        2344      240540
+  193  250560  MN56       NumberReactions    0 NumberParents   1
+        2345      250550
+  205  260550  FE55       NumberReactions    0 NumberParents   1
+        2346      260540
+  206  260590  FE59       NumberReactions    0 NumberParents   1
+        2349      260580
+  233  280590  NI59       NumberReactions    0 NumberParents   1
+        2351      280580
+  234  280630  NI63       NumberReactions    0 NumberParents   1
+        2354      280620
+  235  280650  NI65       NumberReactions    0 NumberParents   1
+        2355      280640
+  315  320750  GE75       NumberReactions    0 NumberParents   1
+        2368      320740
+  317  320770  GE77       NumberReactions    0 NumberParents   1
+        2369      320760
+  340  330760  AS76       NumberReactions    0 NumberParents   1
+        2370      330750
+  363  340790  SE79       NumberReactions    0 NumberParents   1
+        2374      340780
+  365  340810  SE81       NumberReactions    0 NumberParents   1
+        2375      340800
+  367  340820  SE82       NumberReactions    1 NumberParents   0
+    368  340830 Reaction 102 (n,gamma)
+1.912800E-02
+  368  340830  SE83       NumberReactions    0 NumberParents   1
+         367      340820
+  391  350800  BR80       NumberReactions    0 NumberParents   1
+        2376      350790
+  393  350820  BR82       NumberReactions    0 NumberParents   1
+        2377      350810
+  417  360810  KR81       NumberReactions    0 NumberParents   1
+        2379      360800
+  420  360850  KR85       NumberReactions    0 NumberParents   1
+        2382      360840
+  422  360870  KR87       NumberReactions    0 NumberParents   1
+        2383      360860
+  446  370860  RB86       NumberReactions    1 NumberParents   1
+        2384      370850
+    448  370870 Reaction 102 (n,gamma)
+1.414600E-01
+  448  370870  RB87       NumberReactions    1 NumberParents   1
+         446      370860
+    449  370880 Reaction 102 (n,gamma)
+9.841000E-03
+  449  370880  RB88       NumberReactions    0 NumberParents   1
+         448      370870
+  475  380890  SR89       NumberReactions    0 NumberParents   1
+        2388      380880
+  476  380900  SR90       NumberReactions    1 NumberParents   0
+    477  380910 Reaction 102 (n,gamma)
+8.399700E-03
+  477  380910  SR91       NumberReactions    0 NumberParents   1
+         476      380900
+  504  390900  Y90        NumberReactions    0 NumberParents   1
+        2389      390890
+  537  400930  ZR93       NumberReactions    1 NumberParents   2
+        2392      400920
+        2392      400920
+   2393  400940 Reaction 102 (n,gamma)
+4.178100E-02
+  538  400950  ZR95       NumberReactions    0 NumberParents   2
+        2393      400940
+        2393      400940
+  539  400970  ZR97       NumberReactions    0 NumberParents   2
+        2394      400960
+        2394      400960
+  562  410940  NB94       NumberReactions    1 NumberParents   0
+    564  410950 Reaction 102 (n,gamma)
+1.029700E-01
+  564  410950  NB95       NumberReactions    0 NumberParents   1
+         562      410940
+  590  420930  MO93       NumberReactions    0 NumberParents   1
+        2396      420920
+  592  420990  MO99       NumberReactions    0 NumberParents   2
+        2401      420980
+        2401      420980
+  593  421010  MO101      NumberReactions    0 NumberParents   2
+        2402      421000
+        2402      421000
+  617  430990  TC99       NumberReactions    1 NumberParents   0
+    619  431000 Reaction 102 (n,gamma)
+3.525700E-01
+  619  431000  TC100      NumberReactions    0 NumberParents   1
+         617      430990
+  639  441030  RU103      NumberReactions    0 NumberParents   1
+        2408      441020
+  641  441050  RU105      NumberReactions    0 NumberParents   1
+        2409      441040
+  642  441060  RU106      NumberReactions    1 NumberParents   0
+    643  441070 Reaction 102 (n,gamma)
+4.415700E-02
+  643  441070  RU107      NumberReactions    0 NumberParents   1
+         642      441060
+  671  451040  RH104      NumberReactions    0 NumberParents   1
+        2410      451030
+  700  461070  PD107      NumberReactions    1 NumberParents   1
+        2414      461060
+   2415  461080 Reaction 102 (n,gamma)
+5.489800E-01
+  702  461090  PD109      NumberReactions    0 NumberParents   1
+        2415      461080
+  704  461110  PD111      NumberReactions    0 NumberParents   1
+        2416      461100
+  739  471100  AG110      NumberReactions    0 NumberParents   1
+        2418      471090
+  773  481090  CD109      NumberReactions    0 NumberParents   1
+        2420      481080
+  775  481130  CD113      NumberReactions    1 NumberParents   1
+        2423      481120
+   2424  481140 Reaction 102 (n,gamma)
+2.856200E-01
+  777  481150  CD115      NumberReactions    0 NumberParents   1
+        2424      481140
+  779  481170  CD117      NumberReactions    0 NumberParents   1
+        2425      481160
+  819  491150  IN115      NumberReactions    1 NumberParents   0
+    821  491160 Reaction 102 (n,gamma)
+3.667100E-01
+  821  491160  IN116      NumberReactions    0 NumberParents   1
+         819      491150
+  871  501210  SN121      NumberReactions    0 NumberParents   1
+        2434      501200
+  873  501230  SN123      NumberReactions    0 NumberParents   1
+        2435      501220
+  875  501250  SN125      NumberReactions    0 NumberParents   1
+        2436      501240
+  877  501260  SN126      NumberReactions    1 NumberParents   0
+    878  501270 Reaction 102 (n,gamma)
+6.572500E-03
+  878  501270  SN127      NumberReactions    0 NumberParents   1
+         877      501260
+  909  511220  SB122      NumberReactions    0 NumberParents   1
+        2437      511210
+  911  511240  SB124      NumberReactions    0 NumberParents   1
+        2438      511230
+  914  511250  SB125      NumberReactions    1 NumberParents   0
+    915  511260 Reaction 102 (n,gamma)
+2.476800E-01
+  915  511260  SB126      NumberReactions    1 NumberParents   1
+         914      511250
+    918  511270 Reaction 102 (n,gamma)
+2.847900E-01
+  918  511270  SB127      NumberReactions    0 NumberParents   1
+         915      511260
+  952  521230  TE123      NumberReactions    1 NumberParents   1
+        2440      521220
+   2441  521240 Reaction 102 (n,gamma)
+3.694400E-01
+  957  521290  TE129      NumberReactions    0 NumberParents   1
+        2444      521280
+  959  521310  TE131      NumberReactions    0 NumberParents   1
+        2445      521300
+  991  531280  I128       NumberReactions    0 NumberParents   1
+        2446      531270
+  992  531290  I129       NumberReactions    1 NumberParents   0
+    993  531300 Reaction 102 (n,gamma)
+1.913200E-01
+  993  531300  I130       NumberReactions    1 NumberParents   1
+         992      531290
+    995  531310 Reaction 102 (n,gamma)
+2.654400E-01
+  995  531310  I131       NumberReactions    0 NumberParents   1
+         993      531300
+ 1031  541330  XE133      NumberReactions    0 NumberParents   1
+        2453      541320
+ 1034  541350  XE135      NumberReactions    1 NumberParents   1
+        2454      541340
+   2455  541360 Reaction 102 (n,gamma)
+2.961300E-02
+ 1036  541370  XE137      NumberReactions    0 NumberParents   1
+        2455      541360
+ 1069  551340  CS134      NumberReactions    1 NumberParents   1
+        2456      551330
+   1071  551350 Reaction 102 (n,gamma)
+4.172600E-01
+ 1071  551350  CS135      NumberReactions    1 NumberParents   1
+        1069      551340
+   1073  551360 Reaction 102 (n,gamma)
+8.710900E-02
+ 1073  551360  CS136      NumberReactions    1 NumberParents   1
+        1071      551350
+   1075  551370 Reaction 102 (n,gamma)
+7.878700E-02
+ 1075  551370  CS137      NumberReactions    1 NumberParents   1
+        1073      551360
+   1076  551380 Reaction 102 (n,gamma)
+9.557000E-03
+ 1076  551380  CS138      NumberReactions    0 NumberParents   1
+        1075      551370
+ 1107  561390  BA139      NumberReactions    0 NumberParents   1
+        2463      561380
+ 1136  571400  LA140      NumberReactions    0 NumberParents   1
+        2464      571390
+ 1163  581410  CE141      NumberReactions    0 NumberParents   1
+        2467      581400
+ 1164  581420  CE142      NumberReactions    1 NumberParents   0
+   1165  581430 Reaction 102 (n,gamma)
+1.209400E-02
+ 1165  581430  CE143      NumberReactions    0 NumberParents   1
+        1164      581420
+ 1185  591420  PR142      NumberReactions    1 NumberParents   1
+        2468      591410
+   1187  591430 Reaction 102 (n,gamma)
+1.170800E-01
+ 1187  591430  PR143      NumberReactions    0 NumberParents   1
+        1185      591420
+ 1213  601440  ND144      NumberReactions    1 NumberParents   1
+        2470      601430
+   2471  601450 Reaction 102 (n,gamma)
+4.307700E-02
+ 1214  601470  ND147      NumberReactions    0 NumberParents   1
+        2472      601460
+ 1215  601490  ND149      NumberReactions    0 NumberParents   1
+        2473      601480
+ 1216  601510  ND151      NumberReactions    0 NumberParents   1
+        2474      601500
+ 1238  611470  PM147      NumberReactions    1 NumberParents   0
+   1239  611480 Reaction 102 (n,gamma)
+4.918000E-01
+ 1239  611480  PM148      NumberReactions    0 NumberParents   1
+        1238      611470
+ 1267  621470  SM147      NumberReactions    1 NumberParents   0
+   1268  621480 Reaction 102 (n,gamma)
+4.184300E-01
+ 1268  621480  SM148      NumberReactions    1 NumberParents   1
+        1267      621470
+   1269  621490 Reaction 102 (n,gamma)
+1.411400E-01
+ 1269  621490  SM149      NumberReactions    1 NumberParents   1
+        1268      621480
+   2476  621500 Reaction 102 (n,gamma)
+8.069600E-01
+ 1270  621510  SM151      NumberReactions    1 NumberParents   1
+        2476      621500
+   2477  621520 Reaction 102 (n,gamma)
+9.929300E-01
+ 1271  621530  SM153      NumberReactions    0 NumberParents   1
+        2477      621520
+ 1273  621550  SM155      NumberReactions    0 NumberParents   1
+        2478      621540
+ 1297  631520  EU152      NumberReactions    1 NumberParents   1
+        2479      631510
+   2480  631530 Reaction 102 (n,gamma)
+1.992100E+00
+ 1300  631540  EU154      NumberReactions    1 NumberParents   1
+        2480      631530
+   1302  631550 Reaction 102 (n,gamma)
+1.330400E+00
+ 1302  631550  EU155      NumberReactions    1 NumberParents   1
+        1300      631540
+   1303  631560 Reaction 102 (n,gamma)
+4.635300E-01
+ 1303  631560  EU156      NumberReactions    0 NumberParents   1
+        1302      631550
+ 1323  641520  GD152      NumberReactions    1 NumberParents   0
+   1324  641530 Reaction 102 (n,gamma)
+5.643700E-01
+ 1324  641530  GD153      NumberReactions    0 NumberParents   1
+        1323      641520
+ 1326  641590  GD159      NumberReactions    0 NumberParents   1
+        2485      641580
+ 1327  641610  GD161      NumberReactions    0 NumberParents   1
+        2486      641600
+ 1359  651600  TB160      NumberReactions    1 NumberParents   1
+        2487      651590
+   1360  651610 Reaction 102 (n,gamma)
+7.845300E-01
+ 1360  651610  TB161      NumberReactions    0 NumberParents   1
+        1359      651600
+ 1381  661650  DY165      NumberReactions    0 NumberParents   1
+        2494      661640
+ 1420  671660  HO166      NumberReactions    0 NumberParents   1
+        2495      671650
+ 2194  922340  U234       NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+3.954100E-01
+   2195  922350 Reaction 102 (n,gamma)
+2.602100E-01
+ 2195  922350  U235       NumberReactions    2 NumberParents   1
+        2194      922340
+     -1       0 Reaction  18 (n,fission)
+1.449200E+00
+   2197  922360 Reaction 102 (n,gamma)
+3.164200E-01
+ 2197  922360  U236       NumberReactions    2 NumberParents   1
+        2195      922350
+     -1       0 Reaction  18 (n,fission)
+1.164600E-01
+   2198  922370 Reaction 102 (n,gamma)
+2.549900E-01
+ 2198  922370  U237       NumberReactions    0 NumberParents   1
+        2197      922360
+ 2199  922380  U238       NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+4.840100E-02
+   2200  922390 Reaction 102 (n,gamma)
+1.726700E-01
+ 2200  922390  U239       NumberReactions    0 NumberParents   1
+        2199      922380
+ 2211  932370  NP237      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+4.182200E-01
+   2212  932380 Reaction 102 (n,gamma)
+9.034500E-01
+ 2212  932380  NP238      NumberReactions    0 NumberParents   1
+        2211      932370
+ 2221  942360  PU236      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+2.060300E+00
+   2222  942370 Reaction 102 (n,gamma)
+1.651500E-01
+ 2222  942370  PU237      NumberReactions    0 NumberParents   1
+        2221      942360
+ 2223  942380  PU238      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+1.151900E+00
+   2224  942390 Reaction 102 (n,gamma)
+4.377300E-01
+ 2224  942390  PU239      NumberReactions    2 NumberParents   1
+        2223      942380
+     -1       0 Reaction  18 (n,fission)
+1.615200E+00
+   2225  942400 Reaction 102 (n,gamma)
+2.201100E-01
+ 2225  942400  PU240      NumberReactions    2 NumberParents   1
+        2224      942390
+     -1       0 Reaction  18 (n,fission)
+4.493100E-01
+   2226  942410 Reaction 102 (n,gamma)
+2.852700E-01
+ 2226  942410  PU241      NumberReactions    2 NumberParents   1
+        2225      942400
+     -1       0 Reaction  18 (n,fission)
+1.940100E+00
+   2227  942420 Reaction 102 (n,gamma)
+2.544900E-01
+ 2227  942420  PU242      NumberReactions    2 NumberParents   1
+        2226      942410
+     -1       0 Reaction  18 (n,fission)
+3.268200E-01
+   2228  942430 Reaction 102 (n,gamma)
+2.388100E-01
+ 2228  942430  PU243      NumberReactions    0 NumberParents   1
+        2227      942420
+ 2237  952410  AM241      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+3.272900E-01
+   2238  952420 Reaction 102 (n,gamma)
+1.126500E+00
+ 2238  952420  AM242      NumberReactions    2 NumberParents   1
+        2237      952410
+     -1       0 Reaction  18 (n,fission)
+2.466400E+00
+   2240  952430 Reaction 102 (n,gamma)
+2.132600E-01
+ 2240  952430  AM243      NumberReactions    2 NumberParents   1
+        2238      952420
+     -1       0 Reaction  18 (n,fission)
+2.395900E-01
+   2241  952440 Reaction 102 (n,gamma)
+8.525400E-01
+ 2241  952440  AM244      NumberReactions    0 NumberParents   1
+        2240      952430
+ 2251  962420  CM242      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+1.941000E-01
+   2252  962430 Reaction 102 (n,gamma)
+1.217200E-01
+ 2252  962430  CM243      NumberReactions    2 NumberParents   1
+        2251      962420
+     -1       0 Reaction  18 (n,fission)
+2.154900E+00
+   2253  962440 Reaction 102 (n,gamma)
+3.289400E-01
+ 2253  962440  CM244      NumberReactions    2 NumberParents   1
+        2252      962430
+     -1       0 Reaction  18 (n,fission)
+5.064200E-01
+   2254  962450 Reaction 102 (n,gamma)
+4.122500E-01
+ 2254  962450  CM245      NumberReactions    2 NumberParents   1
+        2253      962440
+     -1       0 Reaction  18 (n,fission)
+2.101400E+00
+   2255  962460 Reaction 102 (n,gamma)
+3.348200E-01
+ 2255  962460  CM246      NumberReactions    2 NumberParents   1
+        2254      962450
+     -1       0 Reaction  18 (n,fission)
+3.394500E-01
+   2256  962470 Reaction 102 (n,gamma)
+2.899300E-01
+ 2256  962470  CM247      NumberReactions    2 NumberParents   1
+        2255      962460
+     -1       0 Reaction  18 (n,fission)
+2.067700E+00
+   2257  962480 Reaction 102 (n,gamma)
+3.501100E-01
+ 2257  962480  CM248      NumberReactions    2 NumberParents   1
+        2256      962470
+     -1       0 Reaction  18 (n,fission)
+3.671300E-01
+   2258  962490 Reaction 102 (n,gamma)
+1.282300E-01
+ 2258  962490  CM249      NumberReactions    0 NumberParents   1
+        2257      962480
+ 2268  972490  BK249      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+1.992400E-01
+   2269  972500 Reaction 102 (n,gamma)
+6.795800E-01
+ 2269  972500  BK250      NumberReactions    0 NumberParents   1
+        2268      972490
+ 2281  982490  CF249      NumberReactions    2 NumberParents   0
+     -1       0 Reaction  18 (n,fission)
+2.119500E+00
+   2282  982500 Reaction 102 (n,gamma)
+5.031300E-01
+ 2282  982500  CF250      NumberReactions    2 NumberParents   1
+        2281      982490
+     -1       0 Reaction  18 (n,fission)
+1.347900E+00
+   2283  982510 Reaction 102 (n,gamma)
+2.338200E-01
+ 2283  982510  CF251      NumberReactions    2 NumberParents   1
+        2282      982500
+     -1       0 Reaction  18 (n,fission)
+2.020600E+00
+   2284  982520 Reaction 102 (n,gamma)
+1.950800E-01
+ 2284  982520  CF252      NumberReactions    2 NumberParents   1
+        2283      982510
+     -1       0 Reaction  18 (n,fission)
+6.550800E-01
+   2285  982530 Reaction 102 (n,gamma)
+1.772800E-01
+ 2285  982530  CF253      NumberReactions    0 NumberParents   1
+        2284      982520
+ 2308  110230  NA23       NumberReactions    1 NumberParents   0
+     41  110240 Reaction 102 (n,gamma)
+6.540200E-04
+ 2341  240500  CR50       NumberReactions    1 NumberParents   0
+    181  240510 Reaction 102 (n,gamma)
+1.529800E-02
+ 2342  240520  CR52       NumberReactions    1 NumberParents   0
+   2343  240530 Reaction 102 (n,gamma)
+4.408100E-03
+ 2343  240530  CR53       NumberReactions    1 NumberParents   1
+        2342      240520
+   2344  240540 Reaction 102 (n,gamma)
+1.043400E-02
+ 2344  240540  CR54       NumberReactions    1 NumberParents   1
+        2343      240530
+    182  240550 Reaction 102 (n,gamma)
+4.319600E-03
+ 2345  250550  MN55       NumberReactions    1 NumberParents   0
+    193  250560 Reaction 102 (n,gamma)
+1.229400E-02
+ 2346  260540  FE54       NumberReactions    1 NumberParents   0
+    205  260550 Reaction 102 (n,gamma)
+1.030800E-02
+ 2347  260560  FE56       NumberReactions    1 NumberParents   0
+   2348  260570 Reaction 102 (n,gamma)
+5.249100E-03
+ 2348  260570  FE57       NumberReactions    1 NumberParents   1
+        2347      260560
+   2349  260580 Reaction 102 (n,gamma)
+9.497600E-03
+ 2349  260580  FE58       NumberReactions    1 NumberParents   1
+        2348      260570
+    206  260590 Reaction 102 (n,gamma)
+7.722400E-03
+ 2351  280580  NI58       NumberReactions    1 NumberParents   0
+    233  280590 Reaction 102 (n,gamma)
+1.913000E-02
+ 2352  280600  NI60       NumberReactions    1 NumberParents   0
+   2353  280610 Reaction 102 (n,gamma)
+1.276500E-02
+ 2353  280610  NI61       NumberReactions    1 NumberParents   1
+        2352      280600
+   2354  280620 Reaction 102 (n,gamma)
+2.318800E-02
+ 2354  280620  NI62       NumberReactions    1 NumberParents   1
+        2353      280610
+    234  280630 Reaction 102 (n,gamma)
+2.102600E-02
+ 2355  280640  NI64       NumberReactions    1 NumberParents   0
+    235  280650 Reaction 102 (n,gamma)
+9.925400E-03
+ 2367  320730  GE73       NumberReactions    1 NumberParents   0
+   2368  320740 Reaction 102 (n,gamma)
+7.973900E-02
+ 2368  320740  GE74       NumberReactions    1 NumberParents   1
+        2367      320730
+    315  320750 Reaction 102 (n,gamma)
+1.972200E-02
+ 2369  320760  GE76       NumberReactions    1 NumberParents   0
+    317  320770 Reaction 102 (n,gamma)
+8.495000E-03
+ 2370  330750  AS75       NumberReactions    1 NumberParents   0
+    340  330760 Reaction 102 (n,gamma)
+1.758500E-01
+ 2372  340760  SE76       NumberReactions    1 NumberParents   0
+   2373  340770 Reaction 102 (n,gamma)
+4.743200E-02
+ 2373  340770  SE77       NumberReactions    1 NumberParents   1
+        2372      340760
+   2374  340780 Reaction 102 (n,gamma)
+1.679600E-01
+ 2374  340780  SE78       NumberReactions    1 NumberParents   1
+        2373      340770
+    363  340790 Reaction 102 (n,gamma)
+4.680800E-02
+ 2375  340800  SE80       NumberReactions    1 NumberParents   0
+    365  340810 Reaction 102 (n,gamma)
+2.058300E-02
+ 2376  350790  BR79       NumberReactions    1 NumberParents   0
+    391  350800 Reaction 102 (n,gamma)
+2.702300E-01
+ 2377  350810  BR81       NumberReactions    1 NumberParents   0
+    393  350820 Reaction 102 (n,gamma)
+9.491100E-02
+ 2379  360800  KR80       NumberReactions    1 NumberParents   0
+    417  360810 Reaction 102 (n,gamma)
+1.483000E-01
+ 2380  360820  KR82       NumberReactions    1 NumberParents   0
+   2381  360830 Reaction 102 (n,gamma)
+5.470400E-02
+ 2381  360830  KR83       NumberReactions    1 NumberParents   1
+        2380      360820
+   2382  360840 Reaction 102 (n,gamma)
+1.061800E-01
+ 2382  360840  KR84       NumberReactions    1 NumberParents   1
+        2381      360830
+    420  360850 Reaction 102 (n,gamma)
+1.806700E-02
+ 2383  360860  KR86       NumberReactions    1 NumberParents   0
+    422  360870 Reaction 102 (n,gamma)
+1.872700E-03
+ 2384  370850  RB85       NumberReactions    1 NumberParents   0
+    446  370860 Reaction 102 (n,gamma)
+1.114300E-01
+ 2386  380860  SR86       NumberReactions    1 NumberParents   0
+   2387  380870 Reaction 102 (n,gamma)
+3.705000E-02
+ 2387  380870  SR87       NumberReactions    0 NumberParents   1
+        2386      380860
+ 2388  380880  SR88       NumberReactions    1 NumberParents   0
+    475  380890 Reaction 102 (n,gamma)
+2.976600E-03
+ 2389  390890  Y89        NumberReactions    1 NumberParents   0
+    504  390900 Reaction 102 (n,gamma)
+7.207500E-03
+ 2390  400900  ZR90       NumberReactions    2 NumberParents   0
+   2391  400910 Reaction 102 (n,gamma)
+9.015300E-03
+   2391  400910 Reaction 102 (n,gamma)
+9.131800E-03
+ 2391  400910  ZR91       NumberReactions    2 NumberParents   2
+        2390      400900
+        2390      400900
+   2392  400920 Reaction 102 (n,gamma)
+2.594000E-02
+   2392  400920 Reaction 102 (n,gamma)
+2.602500E-02
+ 2392  400920  ZR92       NumberReactions    2 NumberParents   2
+        2391      400910
+        2391      400910
+    537  400930 Reaction 102 (n,gamma)
+2.696700E-02
+    537  400930 Reaction 102 (n,gamma)
+2.701900E-02
+ 2393  400940  ZR94       NumberReactions    2 NumberParents   1
+         537      400930
+    538  400950 Reaction 102 (n,gamma)
+1.772000E-02
+    538  400950 Reaction 102 (n,gamma)
+1.772600E-02
+ 2394  400960  ZR96       NumberReactions    2 NumberParents   0
+    539  400970 Reaction 102 (n,gamma)
+6.815200E-03
+    539  400970 Reaction 102 (n,gamma)
+6.815200E-03
+ 2396  420920  MO92       NumberReactions    1 NumberParents   0
+    590  420930 Reaction 102 (n,gamma)
+3.727700E-02
+ 2397  420940  MO94       NumberReactions    2 NumberParents   0
+   2398  420950 Reaction 102 (n,gamma)
+6.096600E-02
+   2398  420950 Reaction 102 (n,gamma)
+6.098000E-02
+ 2398  420950  MO95       NumberReactions    2 NumberParents   2
+        2397      420940
+        2397      420940
+   2399  420960 Reaction 102 (n,gamma)
+1.606500E-01
+   2399  420960 Reaction 102 (n,gamma)
+1.606700E-01
+ 2399  420960  MO96       NumberReactions    2 NumberParents   2
+        2398      420950
+        2398      420950
+   2400  420970 Reaction 102 (n,gamma)
+5.367000E-02
+   2400  420970 Reaction 102 (n,gamma)
+5.369000E-02
+ 2400  420970  MO97       NumberReactions    2 NumberParents   2
+        2399      420960
+        2399      420960
+   2401  420980 Reaction 102 (n,gamma)
+1.602200E-01
+   2401  420980 Reaction 102 (n,gamma)
+1.602300E-01
+ 2401  420980  MO98       NumberReactions    2 NumberParents   2
+        2400      420970
+        2400      420970
+    592  420990 Reaction 102 (n,gamma)
+5.269400E-02
+    592  420990 Reaction 102 (n,gamma)
+5.270300E-02
+ 2402  421000  MO100      NumberReactions    2 NumberParents   0
+    593  421010 Reaction 102 (n,gamma)
+4.394800E-02
+    593  421010 Reaction 102 (n,gamma)
+4.395000E-02
+ 2406  441000  RU100      NumberReactions    1 NumberParents   0
+   2407  441010 Reaction 102 (n,gamma)
+1.030200E-01
+ 2407  441010  RU101      NumberReactions    1 NumberParents   1
+        2406      441000
+   2408  441020 Reaction 102 (n,gamma)
+3.803800E-01
+ 2408  441020  RU102      NumberReactions    1 NumberParents   1
+        2407      441010
+    639  441030 Reaction 102 (n,gamma)
+9.528200E-02
+ 2409  441040  RU104      NumberReactions    1 NumberParents   0
+    641  441050 Reaction 102 (n,gamma)
+7.947900E-02
+ 2410  451030  RH103      NumberReactions    1 NumberParents   0
+    671  451040 Reaction 102 (n,gamma)
+3.298200E-01
+ 2412  461040  PD104      NumberReactions    1 NumberParents   0
+   2413  461050 Reaction 102 (n,gamma)
+1.402000E-01
+ 2413  461050  PD105      NumberReactions    1 NumberParents   1
+        2412      461040
+   2414  461060 Reaction 102 (n,gamma)
+5.003700E-01
+ 2414  461060  PD106      NumberReactions    1 NumberParents   1
+        2413      461050
+    700  461070 Reaction 102 (n,gamma)
+1.232100E-01
+ 2415  461080  PD108      NumberReactions    1 NumberParents   1
+         700      461070
+    702  461090 Reaction 102 (n,gamma)
+1.057500E-01
+ 2416  461100  PD110      NumberReactions    1 NumberParents   0
+    704  461110 Reaction 102 (n,gamma)
+7.273500E-02
+ 2418  471090  AG109      NumberReactions    1 NumberParents   0
+    739  471100 Reaction 102 (n,gamma)
+3.315400E-01
+ 2420  481080  CD108      NumberReactions    1 NumberParents   0
+    773  481090 Reaction 102 (n,gamma)
+2.074000E-01
+ 2421  481100  CD110      NumberReactions    1 NumberParents   0
+   2422  481110 Reaction 102 (n,gamma)
+1.314300E-01
+ 2422  481110  CD111      NumberReactions    1 NumberParents   1
+        2421      481100
+   2423  481120 Reaction 102 (n,gamma)
+3.934300E-01
+ 2423  481120  CD112      NumberReactions    1 NumberParents   1
+        2422      481110
+    775  481130 Reaction 102 (n,gamma)
+1.286300E-01
+ 2424  481140  CD114      NumberReactions    1 NumberParents   1
+         775      481130
+    777  481150 Reaction 102 (n,gamma)
+7.746300E-02
+ 2425  481160  CD116      NumberReactions    1 NumberParents   0
+    779  481170 Reaction 102 (n,gamma)
+4.658800E-02
+ 2430  501160  SN116      NumberReactions    1 NumberParents   0
+   2431  501170 Reaction 102 (n,gamma)
+6.406700E-02
+ 2431  501170  SN117      NumberReactions    1 NumberParents   1
+        2430      501160
+   2432  501180 Reaction 102 (n,gamma)
+1.335800E-01
+ 2432  501180  SN118      NumberReactions    1 NumberParents   1
+        2431      501170
+   2433  501190 Reaction 102 (n,gamma)
+4.017300E-02
+ 2433  501190  SN119      NumberReactions    1 NumberParents   1
+        2432      501180
+   2434  501200 Reaction 102 (n,gamma)
+9.239600E-02
+ 2434  501200  SN120      NumberReactions    1 NumberParents   1
+        2433      501190
+    871  501210 Reaction 102 (n,gamma)
+2.404600E-02
+ 2435  501220  SN122      NumberReactions    1 NumberParents   0
+    873  501230 Reaction 102 (n,gamma)
+9.930500E-03
+ 2436  501240  SN124      NumberReactions    1 NumberParents   0
+    875  501250 Reaction 102 (n,gamma)
+6.648200E-03
+ 2437  511210  SB121      NumberReactions    1 NumberParents   0
+    909  511220 Reaction 102 (n,gamma)
+2.395000E-01
+ 2438  511230  SB123      NumberReactions    1 NumberParents   0
+    911  511240 Reaction 102 (n,gamma)
+1.565800E-01
+ 2440  521220  TE122      NumberReactions    1 NumberParents   0
+    952  521230 Reaction 102 (n,gamma)
+1.486100E-01
+ 2441  521240  TE124      NumberReactions    1 NumberParents   1
+         952      521230
+   2442  521250 Reaction 102 (n,gamma)
+8.317600E-02
+ 2442  521250  TE125      NumberReactions    1 NumberParents   1
+        2441      521240
+   2443  521260 Reaction 102 (n,gamma)
+1.750700E-01
+ 2443  521260  TE126      NumberReactions    0 NumberParents   1
+        2442      521250
+ 2444  521280  TE128      NumberReactions    1 NumberParents   0
+    957  521290 Reaction 102 (n,gamma)
+2.381000E-02
+ 2445  521300  TE130      NumberReactions    1 NumberParents   0
+    959  521310 Reaction 102 (n,gamma)
+7.959800E-03
+ 2446  531270  I127       NumberReactions    1 NumberParents   0
+    991  531280 Reaction 102 (n,gamma)
+2.870200E-01
+ 2449  541280  XE128      NumberReactions    1 NumberParents   0
+   2450  541290 Reaction 102 (n,gamma)
+1.593900E-01
+ 2450  541290  XE129      NumberReactions    0 NumberParents   1
+        2449      541280
+ 2451  541300  XE130      NumberReactions    1 NumberParents   0
+   2452  541310 Reaction 102 (n,gamma)
+8.436200E-02
+ 2452  541310  XE131      NumberReactions    1 NumberParents   1
+        2451      541300
+   2453  541320 Reaction 102 (n,gamma)
+1.246500E-01
+ 2453  541320  XE132      NumberReactions    1 NumberParents   1
+        2452      541310
+   1031  541330 Reaction 102 (n,gamma)
+2.583900E-02
+ 2454  541340  XE134      NumberReactions    1 NumberParents   0
+   1034  541350 Reaction 102 (n,gamma)
+1.439500E-02
+ 2455  541360  XE136      NumberReactions    1 NumberParents   1
+        1034      541350
+   1036  541370 Reaction 102 (n,gamma)
+8.428600E-04
+ 2456  551330  CS133      NumberReactions    1 NumberParents   0
+   1069  551340 Reaction 102 (n,gamma)
+2.162400E-01
+ 2459  561340  BA134      NumberReactions    1 NumberParents   0
+   2460  561350 Reaction 102 (n,gamma)
+1.526400E-01
+ 2460  561350  BA135      NumberReactions    0 NumberParents   1
+        2459      561340
+ 2461  561360  BA136      NumberReactions    1 NumberParents   0
+   2462  561370 Reaction 102 (n,gamma)
+4.528500E-02
+ 2462  561370  BA137      NumberReactions    1 NumberParents   1
+        2461      561360
+   2463  561380 Reaction 102 (n,gamma)
+2.992300E-02
+ 2463  561380  BA138      NumberReactions    1 NumberParents   1
+        2462      561370
+   1107  561390 Reaction 102 (n,gamma)
+2.769700E-03
+ 2464  571390  LA139      NumberReactions    1 NumberParents   0
+   1136  571400 Reaction 102 (n,gamma)
+1.556200E-02
+ 2467  581400  CE140      NumberReactions    1 NumberParents   0
+   1163  581410 Reaction 102 (n,gamma)
+5.406400E-03
+ 2468  591410  PR141      NumberReactions    1 NumberParents   0
+   1185  591420 Reaction 102 (n,gamma)
+4.579000E-02
+ 2469  601420  ND142      NumberReactions    1 NumberParents   0
+   2470  601430 Reaction 102 (n,gamma)
+2.157400E-02
+ 2470  601430  ND143      NumberReactions    1 NumberParents   1
+        2469      601420
+   1213  601440 Reaction 102 (n,gamma)
+1.106000E-01
+ 2471  601450  ND145      NumberReactions    1 NumberParents   1
+        1213      601440
+   2472  601460 Reaction 102 (n,gamma)
+1.683200E-01
+ 2472  601460  ND146      NumberReactions    1 NumberParents   1
+        2471      601450
+   1214  601470 Reaction 102 (n,gamma)
+7.052900E-02
+ 2473  601480  ND148      NumberReactions    1 NumberParents   0
+   1215  601490 Reaction 102 (n,gamma)
+7.077300E-02
+ 2474  601500  ND150      NumberReactions    1 NumberParents   0
+   1216  601510 Reaction 102 (n,gamma)
+6.947800E-02
+ 2476  621500  SM150      NumberReactions    1 NumberParents   1
+        1269      621490
+   1270  621510 Reaction 102 (n,gamma)
+2.364000E-01
+ 2477  621520  SM152      NumberReactions    1 NumberParents   1
+        1270      621510
+   1271  621530 Reaction 102 (n,gamma)
+2.063200E-01
+ 2478  621540  SM154      NumberReactions    1 NumberParents   0
+   1273  621550 Reaction 102 (n,gamma)
+1.110300E-01
+ 2479  631510  EU151      NumberReactions    1 NumberParents   0
+   1297  631520 Reaction 102 (n,gamma)
+1.483600E+00
+ 2480  631530  EU153      NumberReactions    1 NumberParents   1
+        1297      631520
+   1300  631540 Reaction 102 (n,gamma)
+9.904800E-01
+ 2481  641540  GD154      NumberReactions    1 NumberParents   0
+   2482  641550 Reaction 102 (n,gamma)
+4.580900E-01
+ 2482  641550  GD155      NumberReactions    1 NumberParents   1
+        2481      641540
+   2483  641560 Reaction 102 (n,gamma)
+1.002300E+00
+ 2483  641560  GD156      NumberReactions    1 NumberParents   1
+        2482      641550
+   2484  641570 Reaction 102 (n,gamma)
+2.742400E-01
+ 2484  641570  GD157      NumberReactions    1 NumberParents   1
+        2483      641560
+   2485  641580 Reaction 102 (n,gamma)
+5.195600E-01
+ 2485  641580  GD158      NumberReactions    1 NumberParents   1
+        2484      641570
+   1326  641590 Reaction 102 (n,gamma)
+1.371500E-01
+ 2486  641600  GD160      NumberReactions    1 NumberParents   0
+   1327  641610 Reaction 102 (n,gamma)
+6.760700E-02
+ 2487  651590  TB159      NumberReactions    1 NumberParents   0
+   1359  651600 Reaction 102 (n,gamma)
+8.228000E-01
+ 2490  661600  DY160      NumberReactions    1 NumberParents   0
+   2491  661610 Reaction 102 (n,gamma)
+4.005600E-01
+ 2491  661610  DY161      NumberReactions    1 NumberParents   1
+        2490      661600
+   2492  661620 Reaction 102 (n,gamma)
+7.013400E-01
+ 2492  661620  DY162      NumberReactions    1 NumberParents   1
+        2491      661610
+   2493  661630 Reaction 102 (n,gamma)
+1.950100E-01
+ 2493  661630  DY163      NumberReactions    1 NumberParents   1
+        2492      661620
+   2494  661640 Reaction 102 (n,gamma)
+4.112800E-01
+ 2494  661640  DY164      NumberReactions    1 NumberParents   1
+        2493      661630
+   1381  661650 Reaction 102 (n,gamma)
+8.614400E-02
+ 2495  671650  HO165      NumberReactions    1 NumberParents   0
+   1420  671660 Reaction 102 (n,gamma)
+5.473400E-01
+ 2498  681660  ER166      NumberReactions    1 NumberParents   0
+   2499  681670 Reaction 102 (n,gamma)
+2.787200E-01
+ 2499  681670  ER167      NumberReactions    1 NumberParents   1
+        2498      681660
+   2500  681680 Reaction 102 (n,gamma)
+6.112300E-01
+ 2500  681680  ER168      NumberReactions    0 NumberParents   1
+        2499      681670
