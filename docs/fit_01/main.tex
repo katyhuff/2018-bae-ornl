@@ -8,6 +8,7 @@
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
 
+
 \usepackage{xcolor, colortbl}
 \definecolor{Lightred}{rgb}{1.92,0.81,0.82}
 \newcolumntype{a}{>{\columncolor{Lightred}}c}
@@ -21,10 +22,6 @@
 \newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
 \graphicspath{ {images/} }
 
-\title{Functionality Isolation Test 01 - Mixed Fuel Fabrication and Depletion Changes with
-        Changes in Plutonium Stream Quality}
-\author{Jin Whan Bae, Eva Davidson, Andrew Worall}
-
 
 %%%% Acronym support
 
@@ -34,26 +31,40 @@
 \makeglossaries
 
 %%%%%%%%%%%%%%actual words%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-
-
 \begin{document}
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE ORION Functionality Isolation Test 1  \par}
+    \vspace{1cm}
+    {\scshape\Large Fuel Fabrication and Depletion Model\par}
+    \vspace{2cm}
+    {\Large\itshape Jin Whan Bae, Eva E. Davidson, 
+    
+    Joshua L. Peterson-Droogh, Andrew Worrall \par}
+    \vfill
+    Oak Ridge National Laboratory, Oak Ridge, TN
+    \vfill
+    \vfill
 
-\section{ORION}
+% Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+
+
+
+\section{Introduction}
+The \gls{FIT} Benchmark is an international effort for better collaboration and testing of
+various fuel cycle codes in use today. In this report, \gls{ORNL}'s contribution
+to the \gls{FIT} Benchmark is discussed.
+
+\gls{ORNL} analysts use ORION to perform various types of fuel cycle analyses.
 ORION \cite{gregg_benefits_2013} is a systems dynamics analysis tool developed and maintained at \gls{NNL}.
 It can simulate the full range of nuclear-related facilities, including storage, fabrication, enrichment,
 and reprocessing facilities, as well as reactors. The facilities are connected on a canvas to form a
 fuel cycle model, where the facilities are modeled as fleets. The code tracks over 2,500 nuclides
 and models decay and in-reactor irradiation of fuel.
 
-\subsection{ORION Fuel Loading Model}
-The \gls{FLM} for ORION uses \glspl{EFMC} to calculate how much of the fissile stream is needed. ORION reads
-the absorption and fission cross section($\sigma_a, \sigma_f$) and the average number of neutrons produced per fission ($\nu$)
-from the cross section data to calculate the equivalent fissile coefficient.
-
-This functionality is considered by the analysts as incomplete and is not utilized in this test. Thus, all the results
-generated in ORION for this test are using fixed fraction fuel fabrication.
-
-\subsection{ORION Depletion Calculations}
 ORION in-reactor depletion calculations are performed with either cross sections or recipes.
 Prior to an ORION analysis, detailed lattice physics calculations are completed to generate burnup-dependent
 cross section libraries for ORION. The cross sections can be generated using lattice physics models set up in CASMO,
@@ -77,21 +88,77 @@ In addition to generating cross sections, lattice physics codes can also be used
 tabulated isotopic fractions for a given fuel irradiation, used as transfer coefficients in ORION for each 
 reactor and fuel type used. 
 
+
+ORION  can potentially take advanced of \glspl{EFMC} to calculate how much of the fissile stream is needed. ORION reads
+the absorption and fission cross section($\sigma_a, \sigma_f$) and the average number of neutrons produced per fission ($\nu$)
+from the cross section data to calculate the equivalent fissile coefficient.
+
+In this work, the \glspl{EFMC} has not been used to perform any analyses because the
+cross section files available do not contain all the
+input parameters required to generate these coefficients.
+Furthermore, \gls{ORNL} has not tested this feature extensively and plans to perform tests
+in the future with \glspl{EFMC}. Since the data available is insufficient to build the \glspl{EFMC}, only
+the cross-section depletion approach is utilized to perform analyses for the \gls{FIT} benchmark and the results
+are compared with the fixed fraction fuel compositions.
+
+
+
 \section{Method}
 
-A simple fuel cycle is created (shown in figure \ref{fig:flow}) where an \gls{MA} stream
-(plutonium and americium with predefined isotopic composition) is mixed with a \gls{DU} (0.238\% $^{235}U$)
-stream to create fuel for a single reactor. The fuel is then irradiated, using the MPR mode, to a predefined burnup (41.09 MWd/kgiHM for \gls{MOX} \gls{LWR}
-and 100 MWd/kgiHM for \gls{SFR}) and then sent to the buffer. We report the fuel composition going into the
-reactor and out of the reactor.
+A simple fuel cycle is created (shown in figure \ref{fig:flow}) where an \gls{MA} stream source
+(plutonium and americium with predefined isotopic composition, shown in table \ref{tab:pu}) is mixed with a \gls{DU} (0.238\% $^{235}U$)
+stream to create fuel for a single reactor. The two reactors tested are \gls{MOX} \glspl{PWR} (thermal spectrum), and \glspl{SFR} (fast spectrum). The reactor specifications
+are listed in table \ref{tab:reac}. The fuel is then irradiated, using the MPR mode, to a predefined burnup and then sent to the buffer. We report the fuel composition going into the
+reactor and out of the reactor. 
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.5]{./flow.jpg}
     \end{center}
-    \caption{Material flow used for plutonium quality analysis.}
+    \caption{Material flow used for \gls{FIT} Benchmark.}
     \label{fig:flow}
 \end{figure}
+
+\begin{table}[htbp!]
+    \centering
+    \begin{tabular}{cccc}
+        \hline
+        Specification & Unit & \gls{MOX} \gls{PWR} & \gls{SFR} \\
+        \hline
+        Core Power & MWt & 3000 & 2500 \\
+        Thermal Efficiency & \% & 30 & 40\\
+        Capacity Factor & - & 0.9 & 0.9\\
+        Cycle Length & year & 1 & 1.264\\
+        Fuel Residence Time & year & 3.0 & 6.32 \\
+        Number of Batches & - & 3 & 5\\
+        Burnup & MWd/kgiHM & 41.09 & 100\\
+        Core Inventory & kgHM/y & 72,000 & 51,953.4 \\
+        \hline
+    \end{tabular}
+    \caption{Reactor specifications for the \gls{FIT} Benchmark.}
+    \label{tab:reac}
+\end{table}
+
+
+\begin{table}[htbp!]
+    \centering
+    \begin{tabular}{c|cccc|cccc}
+        \hline
+        wt\% & \multicolumn{4}{c|}{\gls{MOX} \gls{PWR}} & \multicolumn{4}{c}{\gls{SFR}} \\
+        \hline
+        Isotope & ref & 1 & 2 & 3 & ref & 1 & 2 & 3 \\
+        \hline
+        Pu-238 &  0.48 & 3.12 & 3.32 & 4.00 & 1.98 & 3.12 & 2.87 & 4.00\\
+        Pu-239 & 58.87 & 51.59 & 45.01 & 49.60 & 62.25 & 51.59 & 46.99 & 38.53 \\
+        Pu-240 & 33.98 & 24.32 & 33.91 & 24.76 & 22.50 & 24.32 & 33.91 & 24.56 \\
+        Pu-241 & 2.54 & 11.75 & 4.54 & 12.24 & 8.00 & 11.75 & 4.54 & 15.90 \\
+        Pu-242 & 3.37 & 8.04 & 12.45 & 9.40 & 5.00 & 8.04 & 10.92 & 12.78 \\
+        Am-241 & 0.77 & 1.18 & 0.77 & 0.78 & 0.27 & 1.18 & 0.77 & 4.23 \\
+        \hline
+    \end{tabular}
+    \caption{\gls{MA} stream compositions for the \gls{FIT} Benchmark.}
+    \label{tab:pu}
+\end{table}
 
 \subsection{Cross Section Generation}
 For this test, we used a previously-generated cross section library as an input.
@@ -100,16 +167,47 @@ cycles being evaluated in the FCO campaign \cite{wigeland_nuclear_2014}. The lib
 SCALE suite of codes \cite{noauthor_scale_nodate}. The cross section for the \gls{PWR} \gls{MOX} model was generated from modeling
 a Westinghouse 17 by 17 LOPAR fuel assembly in TRITON for 27 burnup steps and the cross section for the \gls{SFR}
 model was generated from COUPLE using a steady-state flux spectrum from $MC^2-3 / REBUS-3$ \cite{lee_mc2-3:_2013}.
-More details on cross section generation can be found in Peterson et al \cite{peterson_generating_2016}.
+More details on cross section generation method can be found in Peterson et al \cite{peterson_generating_2016}. The
+input compositions used for generating the cross sections are listed in table \ref{tab:inp}. Although ignored here, note that trace amounts
+of other isotopes were used in generating the \gls{SFR}
+driver and blanket cross sections in order to track
+those isotopes.
+
+\begin{table}[htbp!]
+    \centering
+    \begin{tabular}{c|ccc}
+        \hline
+        Isotopes & \gls{MOX} \gls{PWR} & \gls{SFR} Driver & \gls{SFR} Blanket  \\
+        \hline
+        U-235 & 0.22 & 0.108 & 0 \\
+        U-238 & 91.9 & 82.5  & 100 \\
+        Pu-238 & 0.122 & 0.033 & 0 \\
+        Pu-239 & 4.703 & 13.1 & 0 \\
+        Pu-240 & 2.009 & 3.33 & 0\\
+        Pu-241 & 0.579 & 0.234 & 0 \\
+        Pu-242 & 0.424 & 0.107 & 0 \\
+        Am-241 & 0 & 0.113 & 0 \\
+        \hline
+        \hline
+        Am+Pu & 7.83 & 16.8 & 0 \\
+        \hline
+    \end{tabular}
+    \caption{Input composition used to generate cross sections for each reactor type.}
+    \label{tab:inp}
+\end{table}
 
 
 \section{Results}
 The results of the \gls{FIT} are reproduced below. Note that all the results are for the fixed fraction
-fuel fabrication because the \gls{FLM} for ORION is incomplete. The depletion calculations are similar to the
-results from other codes. The main differences rise from the following two factors:
+fuel fabrication as discussed earlier. The depletion calculations are similar to the
+results from other codes. The difference is calculated by the following equation:
+
+\[ \text{\% diff } = \frac{\text{Cyclus result} - \text{ORION result}}{\text{Cyclus result}} * 100 \]
+
+The main differences rise from the following two factors:
 
 \begin{enumerate}
-    \item Cross section generation
+    \item Cross section generation methods and parameters
     \item `Lumping together' of driver and blanket region
 \end{enumerate}
 
@@ -117,7 +215,8 @@ results from other codes. The main differences rise from the following two facto
 Four qualities of \gls{MA} streams (ref, source one, two, three) are mixed with 
 \gls{DU} (0.238\% $^{235}U$) in a fixed ratio (7\% \gls{MA}) and depleted in the thermal reactor
 using the MPR mode in ORION. The charge and discharge fuel compositions are listed in
-tables \ref{fig:lwr_charge} and \ref{fig:lwr_discharge}, respectively.
+tables \ref{fig:lwr_charge} and \ref{fig:lwr_discharge}, respectively.  Note that an infinite percent difference
+occur when the cyclus value is zero.
 
 \begin{table}[h]
     \centering
@@ -146,13 +245,17 @@ fast reactor using the MPR mode in ORION. The charge and discharge fuel composit
 listed in tables \ref{fig:sfr_charge} and \ref{fig:sfr_discharge}, respectively.
 
 Note that for the discharge compositions both the compositions depleted with driver
-cross sections and blanket cross sections are listed. This is because two separate
+cross sections and blanket cross sections are listed in table \ref{fig:sfr_charge_only}.
+This is because two separate
 cross section data are acquired for ORION, but the \gls{SFR} specification in the
-FIT lumps the driver and blanket into one core. Given that difference, the depleted
+\gls{FIT} lumps the driver and blanket into one core. Given that difference, the depleted
 composition should fall in between the depleted composition using the driver cross section (lower Pu+Am),
-and the blanket cross section (higher Pu+Am). To prove this, we multiplied the
+and the blanket cross section (higher Pu+Am).To prove this, we averaged the
 obtained compositions by the mass fraction in the \gls{SFR} core. We assumed that
 the driver fuel takes up 56.5\%, by referencing the \gls{PRISM} design \cite{triplett_prism:_2012}.
+Then we compare this value to the Cyclus result, which has a difference of less than 10\% for all
+isotopes, except for the traces isotopes such as U-236 and Pu-238.
+
 
 \begin{table}[h]
     \centering
@@ -176,10 +279,11 @@ the driver fuel takes up 56.5\%, by referencing the \gls{PRISM} design \cite{tri
     \centering
     \resizebox{\textwidth}{!}{
     \input{sfr_discharge}}
-    \caption{Discharge fuel composition for \gls{SFR} with percent differences from
+    \caption{Mass-averaged discharge fuel composition for \gls{SFR} with percent differences from
              Cyclus results}
     \label{fig:sfr_discharge}
 \end{table}
+
 
 \FloatBarrier
 
@@ -189,15 +293,18 @@ to modeling advanced fuel cycles.
 Changes in the input stream can occur by multi-stage reprocessing or
 technologies like on-line-reprocessing \glspl{MSR}. Using a fixed fraction method
 for fuel fabrication and a recipe for depletion may work for a once-through cycle,
-but can introduce large errors in advanced fuel cycles with continuous reprocessing.
+but can introduce large errors in advanced fuel cycles with input streams that change over time.
 
 We tested ORION's capability to perform depletion calculations
 using cross sections and a user-defined power density. We showed that
-the change in plutonium stream quality does affect the output depletion
-from the reactor. However, the fuel loading model function in ORION is not tested
+the change in plutonium stream quality does affect the ORION output depletion
+from the reactor, and matches closely with the results from Cyclus.
+However, the fuel loading model function in ORION is not tested
 and is future work. Also, the \gls{SFR} discharge composition cannot be
 compared directly, since the test \gls{SFR} uses a lumped-model \gls{SFR},
 whereas the cross sections used for ORION separates the driver and the blanket fuel.
+However, averaging the driver and blanket calculation to the mass fractions in the core
+produces results close to the Cyclus result.
 
 A better comparison could have been done if the analysts for different fuel cycle
 codes used the same set of cross section data. However, it should be noted that
