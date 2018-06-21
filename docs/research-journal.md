@@ -1,3 +1,47 @@
+## 06/21/2018
+1. FIT is done. Sent to collaborators (Bo, Baptise, etc.)
+2. Another abstract on UNF-ST&DARDS sensitivity study
+    * good agreement
+    * it's good enough for fuel cycle analysis
+    * fun exercise
+3. Moving on to US transition
+
+
+## 06/11/2018 - 06/14/2018
+1. Functionality Isolation Test 01
+    * Fuel fabrication and depletion calculation with change in plutonium stream quality
+    * ORION's fuel fabrication model (EFMC) doesn't work
+    * ORION's MPR mode doesn't work on Linux dist.
+    * Working on paper for Paris FCS conference (w Eva Davidson)
+2. UDB reactor actually working
+    * couldn't do discrete assembly model -> lumps all assemblies for one timestep
+    * recipe analysis in ipynb
+3. ORION and CYCLUS differences listed:
+
+
+## 06/07/2018 - 06/08/2018
+1. UDB reactor still running
+    * try to better utilize memory, this is taking too long
+2. Orion results of standardized verification overlapped with Cyclus and excel results
+3. Running ORION for eg01-eg23 transition
+4. Running ORION to do FIT_1 (testing for reactor depletion for different plutonium qualities in MOX)
+
+## 06/06/2018
+1. UDB reactor running (taking a while)
+    * running on lab computer in UIUC (tmux)
+2. EG01-EG23 with specifications from Bo
+    * BR set to 1.2
+
+## 06/05/2018
+1. UDB reactor working
+    * running base case because actual case takes too long
+    * saving it for tonight
+2. Transmutation data is bit off
+    * EG23 does not have breeder blanket
+    * issue reported
+3. EG01-EG23 transition scenario
+    * help from Eva, got an email (report)
+
 
 ## 06/01/2018
 1. EG23 with ORION / Cyclus
