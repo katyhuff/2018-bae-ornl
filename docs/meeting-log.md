@@ -1,5 +1,75 @@
 # Meeting Log
 
+## 06/06/2018f
+Meeting with team
+FCO -> Systems Analysis Integration
+Worrall -> vacation next week / ANS the week after
+
+Discuss milestones
+meetings allow peer-review
+
+Eva: MSR modeling in ORION
+ORNL has been working at MSRs
+National labs are against MSRs due to some people in DOE influence
+Trying to present work and evidence
+Most fuel cycle analysis is in equilibrium.
+Fissile doubling time for MSRs are much faster than SFRs
+advantages
+    * zero excess reactivity needed
+    * as-we-go fissile production
+
+Ben generated FD33 files from ORIGEN
+-> plugs it in to ORION
+
+Cycle:
+MSR with U and Pu
+top off salt with depleted uranium
+
+
+initial core loading = 26.11 t
+thermal power = 2050
+eff =50 
+pu = 10.298 percent
+
+
+initial loading / dumping in decommission
+
+Fission rate is dependent on ND157 / Cs137 (longer lived isotopes)
+anything short-lived are very hard to keep because timesteps are different
+
+6 months 
+
+fuel cycle
+vs
+reactor technology
+
+
+
+## 05/31/2018
+Meeting with Prof.Huff
+
+1. What should be on the agenda for this Meeting
+    * Fate of benchmark paper
+        * the whole point of modular design is:
+        * freedom of scientist
+        * it's not funded centrally, so why would it be maintained?
+        * So if you want it to be maintained, fund us
+    * What is expected me from you for the summer
+    * talk about the interfaces.
+    * How Josh would find it obvious.
+    * Cyclus can run on clusters
+    * Python API
+2. What has been accomplished since we last met
+    * Benchmark paper
+    * got ORION to work
+    * working through transmutation database (not UNF STANDARDS)
+    * Waiting on UNF STANDARDS with Kasheek
+3. What results have been achieved
+4. What are the upcoming plans for future work
+    * See the difference in using UNF STANDARDS vs one recipe
+    * Using transmutation database to generate Cyclus / Orion recipes
+    * Look into transitioning into mixed fleet.
+
 ## 05/30/2018
 Andrew Worall, Josh Peterson
 
