@@ -1,23 +1,23 @@
 <Simulation verbosity="all">
   <RunInfo>
-    <WorkingDir>data</WorkingDir>
+    <WorkingDir>.</WorkingDir>
     <!-- ordered list of step names that RAVEN will run -->
     <Sequence>get_input, make_rom, rom_dump</Sequence>
     <!-- number of parallel runs executed simultaneously -->
-    <batchSize>6</batchSize>
+    <batchSize>1</batchSize>
   </RunInfo>
 
   <VariableGroups>
     <ExternalXML node='Group'
-                 xmlToLoad='./aux-input-files/feature_isotopes.xml'/>
+                 xmlToLoad='./input_space.xml'/>
 
     <ExternalXML node='Group'
-                 xmlToLoad='./aux-input-files/target_isotopes.xml'/>
+                 xmlToLoad='./output_space.xml'/>
   </VariableGroups>
 
   <Files>
     <Input name="rom_output"    type="">rom_output</Input>
-    <Input name="inputcsv" type="">outPointSet_dump.csv</Input>
+    <Input name="inputcsv" type="">udb_pwr.csv</Input>
   </Files>
 
   <Models>
