@@ -69,6 +69,16 @@ Meeting with Prof.Huff
     * See the difference in using UNF STANDARDS vs one recipe
     * Using transmutation database to generate Cyclus / Orion recipes
     * Look into transitioning into mixed fleet.
+=======
+## 06/21/2018
+Joshua Peterson
+1. Canada - CANDU for Mo-99 production (Darlington, Clarington Ontario)
+2. Sensitivty paper - > WM conference
+3. List all of the reactors and if they match up with the desings
+    * pebble bed + natural gas (regions with water scarcity)
+    * Gas reactor
+    * portable reactor (OKLO)
+
 
 ## 05/30/2018
 Andrew Worall, Josh Peterson
