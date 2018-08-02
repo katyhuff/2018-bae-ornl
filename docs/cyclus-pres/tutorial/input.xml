@@ -1,0 +1,505 @@
+<simulation>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%CONTROL BLOCK%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- You define the control block here. You can define the simulation time,
+     decay and timestep
+-->
+    <control>
+        <duration>1200</duration>
+        <!-- This will run through 2015 + 1200/12 = 2115 -->
+        <startmonth>1</startmonth>
+        <startyear>2015</startyear>
+        <!-- timestep in seconds, default it month -->
+        <dt>2629846</dt>
+        <!-- DECAY:
+            never: don't decay at all
+            manual: decays only if the agent specifically does it
+            lazy: decays if the material is `looked at' (traded) -->
+        <decay>never</decay>
+    </control>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%CONTROL BLOCK END %%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%ARCHETYPE BLOCK %%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+    <!-- Specify all libraries used -->
+    <!-- You don't have to use all of them, so it's convenient
+        to claim all agent, cycamore archetypes -->
+
+    <archetypes>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Source</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Sink</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Reactor</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>FuelFab</name>
+        </spec>
+        <spec>
+            <lib>agents</lib>
+            <name>NullRegion</name>
+        </spec>
+        <spec>
+            <lib>agents</lib>
+            <name>NullInst</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>DeployInst</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Separations</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>GrowthRegion</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>ManagerInst</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Enrichment</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Mixer</name>
+        </spec>
+        <spec>
+            <lib>cycamore</lib>
+            <name>Storage</name>
+        </spec>
+    </archetypes>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%ARCHETYPE BLOCK END %%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%PROTOTYPE DEFINITION %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!--
+     The prototype definition is like double clicking the icon on ORION.
+     You can define each facility parameters. How you connect
+     them depends on the incommodity and outcommodity names. So pay
+     close attention to the names!
+ -->
+
+
+
+    <facility>
+        <name>SOURCE</name>
+        <!-- This is the source facility, it outputs the `outcommod`,
+             in a given `outrecipe`. It can output `throughput` amount
+             per timestep. It can output a total of `inventory_size`
+             kg of `outcommod` -->
+        <config>
+            <Source>
+                <outcommod>natl_u</outcommod>
+                <outrecipe>natl_u_recipe</outrecipe>
+                <throughput>1e100</throughput>
+                <inventory_size>1e299</inventory_size>
+            </Source>
+        </config>
+    </facility>
+
+
+    <facility>
+        <name>SINK</name>
+        <!-- This is the sink facility, it receives the `in_commods`
+             given by the `in_commod_prefs`. It can accept `capacity`
+             kg of fuel per timestep, and can only have a total of
+             `max_inv_size`. -->
+        <config>
+            <Sink>
+                <in_commods>
+                    <val>uox_raffinate</val>
+                    <val>sfr_raffinate</val>
+                </in_commods>
+                <in_commod_prefs>
+                    <val>1</val>
+                    <val>3</val>
+                <in_commod_prefs>
+                <max_inv_size>1e299</max_inv_size>
+                <capacity>1e299</capacity>
+            </Sink>
+        </config>
+    </facility>
+
+
+    <facility>
+        <name>STORAGE</name>
+        <!-- This the storage facility, it stores `in_commods`
+             for `residence_time` timesteps and outputs it as
+             name `out_commods`. It can push through `throughput`
+             kgs of material per timestep, and it cannot hold
+             more than `max_inv_size` kg of material.-->
+        <config>
+            <Storage>
+                <in_commods>
+                    <val>tails</val>
+                    <val>tails2</val>
+                </in_commods>
+                <in_commod_prefs>
+                    <val>1</val>
+                    <val>3</val>
+                </in_commod_prefs>
+                <out_commods>
+                    <val>dep_u</val>
+                </out_commods>
+                <residence_time>72</residence_time>
+                <throughput>1e100</throughput>
+                <max_inv_size>1e100</max_inv_size>
+            </Storage>
+        </config>
+    </facility>
+
+
+    <facility>
+        <name>ENRICHMENT</name>
+        <!-- This is the enrichment, it enriches natural uranium
+             to a demanded enrichment (by reactor). It accepts
+             `feed_commod` commodity and outputs `product_commod`,
+             The capacity per timestep is limited to `swu_capacity`.
+        -->
+        <config>
+            <Enrichment>
+                <feed_commod>natl_u</feed_commod>
+                <feed_recipe>natl_u_recipe</feed_recipe>
+                <product_commod>uox</product_commod>
+                <tails_assay>0.0025</tails_assay>
+                <tails_commod>tails</tails_commod>
+                <swu_capacity>1e100</swu_capacity>
+                <initial_feed>1e100</initial_feed>
+            </Enrichment>
+        </config>
+    </facility>
+
+
+    <facility>
+        <name>MIXER</name>
+        <!-- This is the MIXER archetype.
+        You can mix two streams in a fixed ratio to create fuel.
+        or anything! -->
+        <config>
+            <Mixer>
+                <in_streams>
+                    <!-- Each stream definition has:
+                            1. mixing ratio (auto-normalizes)
+                            2. buf_size (how much of this fissile stream can be stored)
+                            3. commodity (name of stream it accepts)
+                            4. pref (preference of the commodity) -->
+                    <stream>
+                        <info>
+                            <mixing_ratio>0.1387</mixing_ratio>
+                            <buf_size>2e100</buf_size>
+                        </info>
+                        <commodities>
+                            <item>
+                                <commodity>sfr_pu</commodity>
+                                <pref>2.0</pref>
+                            </item>
+                            <item>
+                                <commodity>uox_pu</commodity>
+                                <pref>1.0</pref>
+                            </item>
+                        </commodities>
+                    </stream>
+                    <stream>
+                        <info>
+                            <mixing_ratio>0.8613</mixing_ratio>
+                            <buf_size>2e100</buf_size>
+                        </info>
+                        <commodities>
+                            <item>
+                                <commodity>sfr_u</commodity>
+                                <pref>2.0</pref>
+                            </item>
+                            <item>
+                                <commodity>uox_u</commodity>
+                                <pref>1.0</pref>
+                            </item>
+                        </commodities>
+                    </stream>
+                </in_streams>
+                <!-- After one makes the commodity, you define
+                    what name it will output it as, the buffer,
+                    and how much it can output per timestep -->
+                <out_commod>sfr_fuel</out_commod>
+                <out_buf_size>2e100</out_buf_size>
+                <throughput>2e100</throughput>
+            </Mixer>
+        </config>
+    </facility>
+
+
+    <facility>
+        <name>REPROCESSING</name>
+        <!-- This is the REPROCESSING archetype.
+        You can separate elements from a feed commodity.
+        The rest is considered reprocessing waste -->
+        <config>
+            <Separations>
+                <!-- The agent will request this commodity
+                    to the market, receive it, and separated it-->
+                <feed_commods>
+                    <val>cooled_uox_unf</val>
+                </feed_commods>
+                <feedbuf_size>2e100</feedbuf_size>
+                <!-- how much UNF it can reprocess per timestep -->
+                <throughput>166666</throughput>
+                <leftover_commod>uox_raffinate</leftover_commod>
+                <leftoverbuf_size>2e100</leftoverbuf_size>
+                <streams>
+                    <item>
+                        <commod>uox_pu</commod>
+                        <info>
+                            <buf_size>2e100</buf_size>
+                            <efficiencies>
+                                <item>
+                                    <comp>Pu</comp>
+                                    <eff>1</eff>
+                                </item>
+                            </efficiencies>
+                        </info>
+                    </item>
+                    <item>
+                        <commod>uox_u</commod>
+                        <info>
+                            <buf_size>2e100</buf_size>
+                            <efficiencies>
+                                <item>
+                                    <comp>U</comp>
+                                    <eff>1</eff>
+                                </item>
+                            </efficiencies>
+                        </info>
+                    </item>
+                </streams>
+            </Separations>
+        </config>
+    </facility>
+
+
+
+    <facility>
+        <!-- This is a batch recipe reactor. It takes in
+             `fuel_incommods` given by the `fuel_prefs` and
+             outputs `fuel_outcommods` with `fuel_outrecipes`
+             composition. It has a core size of `n_assem_core * assem_size`.
+
+             It refuels every `cycle_time` and does not operate
+             for `refuel_time`. It loads discrete `n_assem_batch`
+             assemblies every refueling. It outputs `power_cap`
+             when it is operating. If it is refueling, or lacking
+             in fuel, it does not produce power.
+
+             You can set multiple `fuel_incommods` and have the
+             preference change mid-simulation. In the example,
+             the mox preference will increase at timestep 10,
+             meaning that the reactor will receive mox from timestep 10.
+         -->
+
+        <name>REACTOR</name>
+        <config>
+            <Reactor>
+                <fuel_inrecipes>    <val>uox_fuel_recipe</val>          <val>mox_fuel_recipe</val>      </fuel_inrecipes>
+                <fuel_outrecipes>   <val>uox_used_fuel_recipe</val>     <val>mox_used_fuel_recipe</val> </fuel_outrecipes>
+                <fuel_incommods>    <val>uox</val>                      <val>mox</val>                  </fuel_incommods>
+                <fuel_outcommods>   <val>uox_unf</val>                  <val>mox_unf</val>              </fuel_outcommods>
+                <fuel_prefs>        <val>3.0</val>                      <val>2.0</val>                  </fuel_prefs>
+
+
+                <cycle_time>18</cycle_time>
+                <refuel_time>0</refuel_time>
+                <assem_size>29863.3</assem_size>
+                <n_assem_core>3</n_assem_core>
+                <n_assem_batch>1</n_assem_batch>
+                <power_cap>1000</power_cap>
+
+                <!-- Optional-->
+                <pref_change_times> <val>10</val> </pref_change_times>
+                <pref_change_commods> <val>mox</val> </pref_change_commods>
+                <pref_change_values> <val>10</val> </pref_change_values>
+
+            </Reactor>
+        </config>
+    </facility>
+
+
+    <facility>
+        <!-- FuelFab mixes two streams of material according to some neutronics properties
+             of requested material. It uses an equivalence type method (similar to COSI).
+
+             It mixes fill + fissile, but has an additional top-up inventory in case there
+             is a lack in fissile stream. 
+        -->
+        <name>FUELFAB</name>
+        <config>
+            <FuelFab>
+                <fill_commods>  <val>natl_u</val> </fill_commods>
+                <fill_commod_prefs> <val>1</val> </fill_commod_prefs>
+                <fill_recipe>natl_u_recipe</fill_recipe>
+                <fill_size>1e299</fill_size>
+
+                <fiss_commods> <val>pu</val> </fiss_commods>
+                <fiss_commod_prefs> <val>1</val> </fiss_commod_prefs>
+                <fiss_recipe>pu</fiss_recipe>
+                <fiss_size>1e299</fiss_size>
+
+                <topup_commod>topup</topup_commod>
+                <topup_recipe>topup_recipe</topup_recipe>
+                <topup_size>1e299</topup_size>
+
+                <outcommod>mox</outcommod>
+                <throughput>2e4</throughput>
+
+                <spectrum>fission_spectrum_ave</spectrum>
+                <spectrum>thermal</spectrum>
+
+            </FuelFab>
+        </config>
+    </facility>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%PROTOTYPE DEFINITION END %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%REGION / INSTITUTION DEFINITION %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+    <region>
+        <name>reg</name>
+        <config>
+            <NullRegion/>
+        </config>
+
+                <institution>
+            <name>fac</name>
+            <config>
+                <DeployInst>
+                    <prototypes>
+
+                        <val>REACTOR</val>
+
+                    </prototypes>
+                    <build_times>
+
+                        <val>1</val>
+
+
+                    </build_times>
+                    <n_build>
+
+                        <val>1</val>
+
+
+                   </n_build>
+                    <lifetimes>
+
+                        <val>9999</val>
+
+                    </lifetimes>
+                </DeployInst>
+            </config>
+        </institution>
+
+    </region>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%REGION / INSTITUTION DEFINITION END %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%% RECIPE DEFINITION %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+    <recipe>
+        <name>natl_u_recipe</name>
+        <basis>mass</basis>
+        <nuclide>
+            <id>U235</id>
+            <comp>0.711</comp>
+        </nuclide>
+        <nuclide>
+            <id>U238</id>
+            <comp>99.289</comp>
+        </nuclide>
+    </recipe>
+
+    <recipe>
+        <name>uox_fuel_recipe</name>
+        <basis>mass</basis>
+        <nuclide>
+            <id>U235</id>
+            <comp>4.3</comp>
+        </nuclide>
+        <nuclide>
+            <id>U238</id>
+            <comp>95.7</comp>
+        </nuclide>
+    </recipe>
+
+    <recipe>
+        <name>uox_used_fuel_recipe</name>
+        <basis>mass</basis>
+        <!-- U is generalized to u238-->
+        <nuclide>
+            <id>U238</id>
+            <comp>93.44</comp>
+        </nuclide>
+        <!-- TRU is generalized to pu239-->
+        <nuclide>
+            <id>Pu239</id>
+            <comp>1.30</comp>
+        </nuclide>
+        <!-- FP is generalized to cs137-->
+        <nuclide>
+            <id>Cs137</id>
+            <comp>5.26</comp>
+        </nuclide>
+    </recipe>
+
+    <recipe>
+        <name>sfr_used_fuel_recipe</name>
+        <basis>mass</basis>
+        <!-- U is generalized to u238-->
+        <nuclide>
+            <id>U238</id>
+            <comp>78.30</comp>
+        </nuclide>
+        <!-- TRU is generalized to pu239-->
+        <nuclide>
+            <id>Pu239</id>
+            <comp>14.04</comp>
+        </nuclide>
+        <!-- FP is generalized to cs137-->
+        <nuclide>
+            <id>Cs137</id>
+            <comp>7.66</comp>
+        </nuclide>
+    </recipe>
+
+    <recipe>
+        <name>sfr_fuel_recipe</name>
+        <basis>mass</basis>
+        <!-- U is generalized to u238-->
+        <nuclide>
+            <id>U238</id>
+            <comp>86.13</comp>
+        </nuclide>
+        <!-- TRU is generalized to pu239-->
+        <nuclide>
+            <id>Pu239</id>
+            <comp>13.87</comp>
+        </nuclide>
+    </recipe>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%% RECIPE DEFINITION END %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+</simulation>

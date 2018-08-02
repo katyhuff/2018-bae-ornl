@@ -17,11 +17,105 @@
                 changing in time or sampled from a distribution)
         \item In-module depletion (i.e. Using in-module SERPENT Reduced-order-model)
         \item Demand-driven deployment \footnotemark
+        \item Database-based MSR simulator
     \end{itemize}
     \footnotetext{NEUP 16-10512}
 \end{frame}
 
 
 \begin{frame}
-    Thank you.
+    \frametitle{Room for Improvement}
+    To really take it to the next level, a more organized, supported
+    effort is needed.
+    \begin{itemize}
+        \item Organized / Supported Code development and Quality Assurance (QA)
+        \begin{itemize}
+            \item Currently done by a Cylcus Developer Manager (25\% PostDoc)
+            \item User support and bug fixing on Github done voluntarily
+            \item Various archetypes are outdated
+        \end{itemize}
+        \item Easier User Interface (UI) for broader user base
+        \begin{itemize}
+            \item Input generation / validation / visualization (e.g. Fulcrum)
+            \item Ouput visualization / postprocessing (e.g. ORION)
+        \end{itemize}
+        \item Cloud execution of Cyclus (Users `submit job')
+        \begin{itemize}
+            \item Avoid Installation issues for end-users
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Why \Cyclus?}
+    \Cyclus has a unique expandable nature due to its open-source-ness and
+    modularity of models. Here are a list of interesting projects we came up with:
+    \begin{itemize}
+        \item Central database driven high fidelity fuel cycle simulation
+        \begin{itemize}
+            \item Every fuel cycle facility in the Evaluation and Screening report modeled
+            \item Real-life designs (Reactor designs, Reprocessing technologies etc.)
+            \item plug-and-play for user
+        \end{itemize}
+        \item GIS-based work (every agent can have a coordinate property)
+        \begin{itemize}
+            \item Transportation model
+            \item Energy demand / region based deployment (i.e. EAGLE-I)
+        \end{itemize}
+        \item Various Metrics Connector
+        \begin{itemize}
+        	\item Postprocessor for Safeguard / Non-proliferation metrics
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Synergy with ORNL}
+	\begin{itemize}
+		\item Software management and QA infrastructure
+		\item Computational development team with GUI development
+		\item Most importantly: the personnel resources
+		\begin{itemize}
+			\item Fuel Cycle simulation is a combination of all aspects of nuclear engineering
+			\item Insight / data from Safeguards, Reactor Physics 
+			\item \textbf{Provide questions that needs to be answered}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Synergy with ORNL}
+	\begin{itemize}
+		\item \Cyclus is a tool. It should be developed to fulfill the needs of its customers.
+		\item ORNL is an awesome resource for those interesting questions.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Conclusion II}
+	\begin{itemize}
+		\item \Cyclus, with partnership with ORNL, can become a one-stop tool for system integration analysis.
+		\item To achieve this, a central, supported effort is needed for \Cyclus
+		\item Staff can `plug in' their developed model (reactor design, fuel cycle facility etc) to see the model's performance in a larger system.
+	\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+    \frametitle{Acknowledgements}
+    Invaluable advice and help provided by:
+    Joshua Peterson-Droogh, Kathryn Huff, Andrew Worrall, Eva Davison
+
+    This summer sponsored by:
+    NESLS program at ORNL
+\end{frame}
+
+\begin{frame}
+    Thank you. Questions / Concerns / Ideas?
 \end{frame}
